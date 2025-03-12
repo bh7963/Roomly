@@ -1,0 +1,454 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+#wrapper-head {
+  z-index: 90;
+  position: sticky;
+  display: flex;
+  justify-content: center;
+  top: 0;
+
+  background-color: #FFF;
+
+  width: 100%;
+  height: 100%;
+  max-height: 100px;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  width: 1350px;
+  height: 100px;
+  justify-content: space-between;
+}
+
+.logo {
+  cursor: pointer;
+  margin: 0px 0px 0px 100px;
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  user-select: none;
+}
+
+.logo-icon {
+  margin-right: 8px;
+  width: 45px;
+  height: 45px;
+  background-image: url('/public/MainLogo.png');
+  /* 경로 확인 필요 */
+  background-size: cover;
+  /* 이미지를 크기에 맞게 채움 */
+  background-position: center;
+  /* 이미지 위치를 가운데로 */
+  background-repeat: no-repeat;
+  /* 이미지 반복 방지 */
+
+}
+
+
+.logo-name {
+  width: auto;
+  height: 50px;
+  font-size: 30px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(221, 173, 191);
+
+  font-weight: 600;
+
+}
+
+.sign {
+  margin: 0px 100px 0px 0px;
+  min-width: 220px;
+  display: flex;
+  justify-content: space-between;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+:root {
+  --bg: #fff;
+  --text: #4B2E39;
+  /* 깊은 갈색 */
+  --light-pink: #fff0f0;
+  --pink: #ffe9e9;
+  --dark-pink: #f9c4d2;
+  --pink-border: #b18597;
+  --pink-shadow: #ffe3e2;
+}
+
+.sign-in,
+.sign-up-button,
+.my-page,
+.log-out {
+  box-sizing: border-box;
+  margin-bottom: 15px;
+  font-family: 'Pretendard-Regular';
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  /* 가로로 글씨 정렬 */
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  /* border: 2px solid var(--pink-border); */
+  border-radius: 0.75em;
+  padding: 0.75em 1.5em;
+  background: var(--light-pink);
+  color: var(--text);
+  /* 텍스트 색상 변경 */
+  font-size: 15px;
+  font-family: 'Pretendard-Regular';
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 100px;
+  height: 45px;
+  transform-style: preserve-3d;
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.sign-in::before,
+.sign-up-button::before,
+.my-page::before,
+.log-out::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: var(--dark-pink);
+  border-radius: inherit;
+  box-shadow: 0 0 0 2px var(--pink-border), 0 0.625em 0 0 var(--pink-shadow);
+  transform: translate3d(0, 0.75em, -1em);
+  transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.sign-in:hover,
+.sign-up-button:hover,
+.my-page:hover,
+.log-out:hover {
+  background: var(--pink);
+  transform: translate(0, 0.25em);
+}
+
+.sign-in:hover::before,
+.sign-up-button:hover::before,
+.my-page:hover::before,
+.log-out:hover::before {
+  box-shadow: 0 0 0 2px var(--pink-border), 0 0.5em 0 0 var(--pink-shadow);
+  transform: translate3d(0, 0.5em, -1em);
+}
+
+.sign-in:active,
+.sign-up-button:active,
+.my-page:active,
+.log-out:active {
+  background: var(--pink);
+  transform: translate(0em, 0.75em);
+}
+
+.sign-in:active::before,
+.sign-up-button:active::before,
+.my-page:active::before,
+.log-out:active::before {
+  box-shadow: 0 0 0 2px var(--pink-border), 0 0 var(--pink-shadow);
+  transform: translate3d(0, 0, -1em);
+}
+
+.modal-container {
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(85, 84, 84, 0.5);
+}
+
+.modal-content {
+  z-index: 110;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 320px;
+  height: 355px;
+  padding: 14px;
+}
+
+.log-in-box {
+  display: flex;
+  gap: 5px;
+}
+
+.log-in {
+  gap: 65px;
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 30px;
+  align-items: center;
+  /* justify-content: space-between; */
+
+
+}
+
+.log-in-word {
+  margin-left: 10px;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 700;
+  font-family: 'Pretendard-Regular';
+  color: rgb(109, 108, 108);
+}
+
+.log-in-close {
+  cursor: pointer;
+  background-image: url(/public/images/main/close.jpg);
+  width: 40px;
+  height: 40px;
+}
+
+.input-log-box {
+  padding: 10px 10px 10px 5px;
+  border-radius: 4px;
+  background-color: rgb(253, 236, 236);
+}
+
+.input-log {
+  display: flex;
+  justify-content: space-between;
+}
+
+.log-in-id-icon {
+  background-image: url(/public/images/Email.jpg);
+  background-color: rgb(253, 236, 236); /* 원하는 색상 */
+  background-blend-mode: multiply; /* 이미지와 색상을 혼합 */
+  margin-top: 25px;
+  width: 40px;
+  height: 30px;
+}
+.log-in-pw-icon {
+  background-image: url(/public/images/Lock.jpg);
+  background-color: rgb(253, 236, 236); /* 원하는 색상 */
+  background-blend-mode: multiply; /* 이미지와 색상을 혼합 */
+  margin-top: 24px;
+  width: 40px;
+  height: 30px;
+}
+
+.log-in-button {
+  margin-top: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 280px;
+  height: 40px;
+  border-radius: 6px;
+  font-size: 19px;
+  font-weight: 700;
+  background-color: #faa5af;
+  color: white;
+  border: none;
+  font-family: 'Pretendard-Regular';
+}
+
+.log-in-button:active {
+  background-color: #fa8290;
+}
+
+.find {
+  display: flex;
+  align-items: center;
+}
+
+.find-id {
+  width: auto;
+  margin-top: 5px;
+  margin-right: 50px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(121, 120, 120);
+
+}
+
+.sign-up {
+  margin-top: 15px;
+  display: flex;
+}
+
+.sign-up-text {
+  margin-right: 20px;
+  font-size: 14px;
+  font-family: 'Pretendard-Regular';
+  font-weight: 600;
+  color: rgb(82, 81, 81);
+}
+
+.sign-up-text-button {
+  width: auto;
+  margin-top: 5px;
+
+  cursor: pointer;
+  font-size: 15px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(121, 120, 120);
+}
+
+
+/* rander: 로그인 했을 경우 */
+
+.nowlogin {
+  margin: 0px 100px 0px 0px;
+  min-width: 220px;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* !search-bar */
+.top-search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 5px;
+
+  width: auto;
+  min-width: 380px;
+  height: 38px;
+  border: solid 3px rgb(238, 185, 185);
+  border-radius: 10px;
+  background-color: rgba(250, 135, 135, 0.452);
+}
+
+.top-search-bar-Region,
+.top-search-bar-start,
+.top-search-bar-end,
+.top-search-bar-count {
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.top-search-bar-Region {
+  margin-left: 15px;
+  width: auto;
+  max-width: 80px;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  white-space: nowrap;
+  padding-right: 4px;
+}
+
+.top-search-bar-start {
+  width: auto;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  white-space: nowrap;
+  padding-left: 4px;
+  padding-right: 4px;
+
+}
+
+.top-search-bar-end {
+  width: auto;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  white-space: nowrap;
+  padding-left: 4px;
+  padding-right: 4px;
+
+
+}
+
+.top-search-bar-count {
+  margin-right: 15px;
+  width: auto;
+  max-width: 54px;
+  align-items: center;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  -webkit-box-flex: 1;
+  white-space: nowrap;
+  padding-left: 4px;
+}
+
+.top-search-bar-solid {
+  width: 1px;
+  height: 20px;
+
+  border-right: solid 3px rgba(131, 130, 130, 0.8);
+
+}
+
+.top-search-bar-solid2 {
+  font-weight: bold;
+  font-family: 'Pretendard-Regular';
+  height: 21px;
+  color: rgb(97, 97, 97);
+}
+
+.log-in-mode-select-button {
+  margin-top: 4px;
+  display: flex;
+  height: 30px;
+  /* gap: 2px; */
+
+}
+
+.log-in-mode-guest-active,
+.log-in-mode-host-active {
+  display: flex; 
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px; /* 테두리 둥글게 */
+  text-decoration: none; /* 링크 밑줄 제거 */
+  font-weight: bold; /* 글씨 두껍게 */
+  transition: background-color 0.3s; /* 호버 시 부드러운 색 변화 */
+  background-color: #fa919d;
+  color: white;
+  border: none;
+  font-size: 16px;
+  width: 50px;
+  height: 35px; /* 높이 지정 */
+
+}
+
+.log-in-mode-guest-disable,
+.log-in-mode-host-disable {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s;
+  background-color: rgba(157, 160, 165, 1);
+  color: white;
+  border: none;
+  font-size: 16px;
+  width: 50px;
+  height: 35px; /* 높이 지정 */
+}

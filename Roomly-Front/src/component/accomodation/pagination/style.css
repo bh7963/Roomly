@@ -1,0 +1,27 @@
+  
+  /* Pagination 스타일 */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .page-btn {
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .page-btn.active {
+    background-color: #00accf;
+    color: white;
+  }
+  
+  .page-btn:hover {
+    background-color: #D9D9D9;
+    color: white;
+  }
+  

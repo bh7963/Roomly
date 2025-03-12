@@ -1,0 +1,13 @@
+#map-wrapper{
+    display: flex;
+    background-color: #00ACCF;
+    height: 210px ;
+    align-items: center;
+}
+.map-filter{
+    width: 250px;
+    height: 160px;
+    background-color: #ffff;
+    border-radius: 10px;
+
+}

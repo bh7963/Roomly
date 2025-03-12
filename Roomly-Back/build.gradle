@@ -1,0 +1,64 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.3.4'
+	id 'io.spring.dependency-management' version '1.1.6'
+}
+
+group = 'com.roomly'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation group: 'net.nurigo', name: 'sdk', version: '4.3.0'
+
+	// 외부 api를 불러오기위한 spring 모듈
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+	
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.mysql:mysql-connector-j'
+	
+	
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+
+	// mokito 기능을 사용할수 있는 의존성 주입
+	testImplementation 'org.mockito:mockito-core:5.0.0'
+
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+
+	// 추가한 의존성
+	
+	// JWT 기능을 사용할 수 있는 API 제공
+	implementation 'io.jsonwebtoken:jjwt-api:0.11.2'
+	
+	// JWT 기능을 실제로 구현하는 라이브러리.
+	runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.2' 
+	
+	// JSON 처리에 Jackson을 사용하기 위한 모듈.
+	runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.2'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

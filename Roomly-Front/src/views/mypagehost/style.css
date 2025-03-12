@@ -1,0 +1,44 @@
+/* 페이지 전체를 감싸는 컨테이너 */
+#mypage-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#mypage-wrapper {
+  position: fixed;
+  left: 360px;
+  width: 1200px;
+  height: 850px;
+  background-color: #f1ecef7c;
+}
+
+/* 호스트 페이지 css */
+.hostMypage-side-bar {
+  width: 30%;
+  min-width: 250px;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.hostMypage-main { 
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 700px;
+}
+
+.hostMypage-main-title {
+  width: 100%;
+  height: 100px;
+}
+
+.hostMypage-main-detail {
+  width: 100%;
+  height: 100%;
+}

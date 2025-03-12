@@ -1,0 +1,46 @@
+#room-detail-map-wrapper{
+    display: flex;
+    flex-direction: column;
+  
+    width: 96.5%;
+    max-width: 1170px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    color: #52607C;
+    background-color: #f9f9f9;
+    padding: 40px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#room-detail-map-wrapper .map-title{
+    color: #52607C;
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+#room-detail-map-wrapper .address-container{
+  
+display: flex;
+margin-top: 30px;
+gap: 20px;
+align-items: center;
+
+}
+
+#room-detail-map-wrapper .address-copy-button{
+  
+    border: none;
+    background-color: #5CC3D6;
+    border-radius: 5px;
+    width: 70px;
+    height: 30px;
+    color: aliceblue;
+}
+
+#room-detail-map-wrapper .address-copy-button:hover{
+    transform: scale(1.05);
+  background-color: rgb(186, 245, 255,0.5);
+  cursor: pointer;
+
+}

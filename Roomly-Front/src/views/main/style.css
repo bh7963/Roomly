@@ -1,0 +1,186 @@
+#main-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-image-text {
+  position: absolute; /* 비디오 위에 고정 */
+    width: 100%;
+    top: 300px; /* 원하는 위치로 조정 */
+
+    font-size: 30px;
+    font-family: 'Pretendard-Regular';
+    color: rgba(255, 255, 255, 0.959);
+    font-weight: bold;
+    text-align: center;
+    animation: fadeIn 2s ease-out;
+    z-index: 1; /* 비디오 위에 나타나도록 설정 */
+}
+
+.main-detail {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.main-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  object-position: center center;
+}
+
+
+
+.main-image-1 {
+  width: 100%;
+  max-height: 100%;
+  inset: 0px;
+}
+
+.main-search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  border-radius: 200px;
+  background-color: white;
+  border: solid 3px rgb(238, 185, 185);
+  width: 1000px;
+  height: 120px;
+  margin-top: -90px;
+}
+
+.search {
+  width: 130px;
+  height: 43px;
+  padding: 0 15px;
+  border-radius: 5px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-size: 15px;
+  font-weight: 550;
+  background-color: rgb(253, 236, 236);
+  border: none;
+  /* 테두리 없애기 */
+
+  transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.search:focus {
+  background-color: rgba(255, 255, 255, 1);
+  border: 1px solid #A0AEC0;
+  outline: none;
+}
+
+.word {
+  margin: 3px 8px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+.search-button {
+  cursor: pointer;
+
+  width: 100px;
+  height: 48px;
+  margin-left: 10px;
+
+  font-size: 19px;
+  font-weight: 500;
+  color: white;
+  font-family: 'Pretendard-Regular';
+  background-color: #ff94a0;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0px 4px 8px rgba(255, 98, 117, 0.3);
+  /* 버튼 그림자 추가 */
+
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  /* 호버 및 클릭 애니메이션 */
+}
+
+.search-button:hover {
+  background-color: #fc7e8d;
+}
+
+.search-button:active {
+  transform: scale(0.95);
+  /* 클릭 시 버튼 축소 효과 */
+}
+
+.image-slider {
+  margin: 40px;
+}
+
+/* 추천 리스트 */
+.distimction-warpper {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.distimction-title {
+  width: 1190px;
+  height: 30px;
+
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+
+  margin-top: 0px;
+  margin-left: 20px;
+
+  text-align: left;
+
+  font-weight: 600;
+}
+
+.distimction-column {
+  display: flex;
+  width: 1200px;
+  height: 100%;
+  margin-left: 10px;
+  align-items: start;
+}
+
+
+/* 종료날짜 버튼 css */
+
+.check-out {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+
+}
+
+.calendar-button {
+  inset: 0px auto auto 0px;
+  width: 190px;
+  height: 43px;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  /* font-family: 'Poppins', sans-serif; */
+  color: rgb(66, 65, 65);
+  font-size: 15px;
+  font-weight: 550;
+  background-color: rgb(253, 236, 236);
+  border: none;
+  /* 테두리 없애기 */
+}
+
+.last-wrapper {
+  margin-top: 70px;
+  background-color: #f1ecef;
+}

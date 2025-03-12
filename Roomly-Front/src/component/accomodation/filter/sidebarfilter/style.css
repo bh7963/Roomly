@@ -1,0 +1,377 @@
+
+/* 사이드바 기둥 */
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 220px;
+  height: 100%;
+
+}
+
+#sidebar .filter-title{
+  margin-top: 2px;
+}
+
+#sidebar .mini-bar{
+  background-image: url('../../../../../public/images/accommodationlist/Line01.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 5px;
+  height: 20px;
+  
+}
+
+
+/* 검색 초기화 */
+#sidebar .reset-box{
+
+  display: flex;
+  width: 90px;
+  height: 20px;
+  justify-content: space-between;
+  font-family: "Noto Sans KR", sans-serif;
+  align-self: flex-end;
+  margin-right: 5px;
+
+}
+
+#sidebar .reset{
+  color: #9DA0A5;
+  font-size: 13px;
+  font-weight: 700;  
+  font-family: "Roboto";
+  margin-top: 1px;
+}
+
+
+#sidebar .reset-btn {
+  background-image: url('../../../../../public/images/accommodationlist/Restart.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 17px;
+  height: 18px;
+  color: #9DA0A5;
+  border: none;
+  cursor: pointer;
+  background-color: #ffff;
+}
+
+/* 공통 스타일 */
+#sidebar .filter-header {
+  display: flex;
+  width: 200px;
+  height: 100px;
+  line-height: 100%;
+  padding:10px;
+  color: #384C60;
+  font-weight: 750;
+  justify-content: space-between;
+  padding: 20px 20px 0 20px;
+  margin-bottom: 10px;
+}
+
+
+#sidebar .filter-title-box{
+  display: flex;
+  font-size: 16px;
+  gap: 8px;
+}
+
+#sidebar .filter-price-box{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 25px;
+  border: 2px solid #dddd;
+  width: 170px;
+}
+
+#sidebar .filter-section ul{
+  list-style: none;
+  padding: 0;
+  margin:0;
+  font-size: 14px;
+}
+
+#sidebar .filter-section li{
+  gap: 5px;
+}
+
+#sidebar .filter-section input{
+  margin-right: 10px;
+}
+
+
+#sidebar .filter-section-box{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 25px;
+  border: 2px solid #dddd;
+  width: 220px;
+}
+
+/* 체크박스 스타일링 */
+#sidebar input[type="checkbox"] {
+  -webkit-appearance: none; 
+  -moz-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 2px solid #00ACCF; /* 테두리 색상 */
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  background-color: #fff; /* 기본 배경색 */
+  transition: background-color 0.2s ease;
+  
+}
+
+/* 체크박스가 선택되었을 때의 스타일 */
+#sidebar input[type="checkbox"]:checked {
+
+  border-color: #FF5733; /* 체크된 상태의 테두리 색상 */
+}
+
+/* 체크박스 내부 체크 모양을 위한 스타일 */
+#sidebar input[type="checkbox"]:checked::before {
+  content: "✓"; 
+  display: block;
+  text-align: center;
+  color: #333; /* 체크 표시 색상 */
+  font-size: 17px;
+  line-height: 16px;
+}
+
+
+/* 가격 */
+#sidebar .filter-price-title-box{
+  display: flex;
+  gap:5px;
+  margin-bottom: 10px;  
+}
+
+#sidebar .filter-categories-title{
+  color: #384C60;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: "Roboto";
+  margin-bottom: 10px;
+}
+
+#sidebar .filter-price-title-second{
+  color: #9DA0A5;
+  font-size: 10px;
+  font-weight: 100;  
+  font-family: "Roboto"; 
+  margin-top: 4px;
+ 
+}
+
+
+/* 레인지바 공통 디자인 */
+input[type="range"] {
+  -webkit-appearance: none; 
+  appearance: none;
+  margin: 0; 
+  border-radius: 0px; 
+
+}
+
+#sidebar ul li {
+  display: flex;
+  align-items: center;
+  color: #384C60;
+  font-weight: 420;
+  margin-top: 10px;
+  
+}
+
+#sidebar ul.star li {
+  display: flex;
+  font-size: 18px; 
+  color: #FEDC7A; 
+  text-shadow: 1px 1px 1px #D9D9D9;
+  align-items: center;
+  
+}
+
+#sidebar ul.star li input[type="checkbox"] {
+  margin-top: 6px;
+}
+
+/* 셀렉터 공통 스타일 */
+
+#sidebar .filter-section{
+display: flex;
+justify-content: center;
+margin-bottom: 20px;
+}
+
+/* 버튼 스타일 */
+#sidebar .button-wrapper{
+  width: 170px;
+  display: flex;
+  flex-direction:row-reverse;
+}
+
+#sidebar .show-all-button{
+  cursor: pointer;
+  color:#00ACCF;
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 400;
+  padding: 0%;
+  text-decoration: none;
+  background: none;
+  border: none;
+}
+
+#sidebar .show-all-button:hover{
+  text-decoration: underline;
+  font-weight: 700;
+}
+
+#sidebar .arrow-down{
+  background-image: url('../../../../../public/images/accommodationlist/Sort\ Down.png');
+  width: 12px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-size: 99%;
+  cursor: pointer;
+  position: relative;
+  top: -1px;
+  margin-left: 1.5px;
+
+}
+
+#sidebar .arrow-up{
+  background-image: url('../../../../../public/images/accommodationlist/Sort\ Up.png');
+  width: 12px;
+  height: 13px;
+  background-repeat: no-repeat;
+  background-size: 99%;
+  cursor: pointer;
+  position: relative;
+  bottom: -1.1px;
+  margin-left: 1.5px;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+
+
+.filter-section ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.filter-section li {
+  margin-bottom: 10px;
+}
+
+.apply-btn {
+
+
+  margin-top: 10px;
+  padding: 8px 12px;
+  background-color: #00ACCF;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.price-range {
+  display: flex;
+  justify-content: space-between;
+}
+
+.range-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-range-display {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.range-slider {
+  position: relative;
+  width: 100%;
+  height: 30px;
+}
+
+.slider-track {
+  position: absolute;
+  width: 100%;
+  height: 8px;
+  background: #ddd;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+}
+
+.slider-range {
+  position: absolute;
+  height: 8px;
+  background: #00ACCF;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 4px;
+}
+
+.slider-thumb {
+  position: absolute;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #00ACCF;
+  cursor: pointer;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.slider-thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #00ACCF;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.min-thumb {
+  z-index: 2;
+}
+
+.max-thumb {
+  z-index: 1;
+}
+
+.price-range-display {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+} */
+
+

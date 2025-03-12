@@ -1,0 +1,75 @@
+.overlay2-modal2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f1ecef7c;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* 모달을 최상단에 표시 */
+}
+
+.modal2 {
+    position: relative;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 600px; /* 고정 너비 */
+    max-height: 80vh; /* 모달 최대 높이 설정 */
+    overflow-y: auto; /* 내용이 많을 경우 스크롤바 생성 */
+    text-align: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* 닫기 버튼을 우측 상단에 배치 */
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+    font-family: 'Pretendard-Regular';
+    color: rgb(77, 76, 76);
+}
+
+.title1-modal2 {
+    font-size: 20px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(92, 91, 91);
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.policy__wrap {
+    margin-top: 20px;
+    line-height: 1.5;
+}
+
+.policy__wrap table {
+    width: 100%; /* 테이블의 너비를 100%로 설정 */
+    border-collapse: collapse; /* 테이블 셀 사이의 여백 제거 */
+}
+
+.policy__wrap th, .policy__wrap td {
+    border: 1px solid #ddd; /* 테이블 셀의 테두리 설정 */
+    padding: 10px; /* 셀 안쪽 여백 */
+    text-align: left; /* 왼쪽 정렬 */
+    font-family: 'Pretendard-Regular';
+    color: rgb(77, 76, 76);
+}
+
+.policy__wrap th {
+    background-color: #f2f2f2;
+    font-family: 'Pretendard-Regular';
+    color: rgb(77, 76, 76);
+}
+
+.paragraph_list {
+    margin-top: 20px; /* 문단 간격 설정 */
+    font-size: 14px; /* 글자 크기 설정 */
+    font-family: 'Pretendard-Regular';
+    color: rgb(77, 76, 76);
+}

@@ -1,0 +1,9 @@
+.middle-wrapper{
+
+    width: 100%;
+    max-width: 1200px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+
+}

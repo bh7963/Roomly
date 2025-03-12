@@ -1,0 +1,167 @@
+.slider4-wrapper {
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+}
+
+.slider4-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.title {
+  height: 40px;
+
+  margin-top: 0px;
+
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.slider4-image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider4-image {
+  width: 280px;
+  height: 100%;
+  margin: 0 10px;
+}
+
+.slider4-slide {
+  cursor: pointer;
+
+  border-radius: 25px;
+  width: 280px;
+  height: 180px;
+  margin: 0;
+  border: solid 6px rgba(247, 219, 219, 0.637);
+  box-sizing: border-box;
+}
+
+
+.button-container {
+  justify-content: center;
+  width: 1225px;
+  height: 45px;
+
+  margin-top: -145px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider4-left {
+  z-index: 1;
+  margin-top: 70px;
+  margin-right: -37px;
+  width: 45px;
+  height: 45px;
+}
+
+.slider4-right {
+  margin-top: 65px;
+  margin-left: -37px;
+  width: 45px;
+  height: 45px;
+}
+
+.slider4-left-button {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%; /* 이미지 크기를 버튼 크기에 맞게 100%로 설정 */
+  background-position: center; /* 이미지가 중앙에 배치되도록 */
+  border-radius: 30px;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  background-image: url(/public/images/left-arrow.png);
+  background-color: white;
+  transition: 1s;
+  }
+
+.slider4-right-button {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%; /* 이미지 크기를 버튼 크기에 맞게 100%로 설정 */
+  background-position: center; /* 이미지가 중앙에 배치되도록 */
+  border-radius: 30px; /* 둥근 모서리 */
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  background-image: url(/public/images/left-arrow.png);
+  background-color: white;
+  transition: 1s;
+  transform: rotate(180deg); /* 이미지를 180도 회전 */
+}
+
+/* 하단 숙소 내용 */
+
+.slider4-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 280px;
+  height: 115px;
+}
+
+.slider4-text-filter {
+  margin: 2.5px 0px;
+  font-size: 11px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+
+.slider4-text-title {
+  margin: 2.5px 0px;
+  font-size: 15px;
+  font-family: 'Pretendard-Regular';
+  font-weight: bold;
+  color: rgb(92, 91, 91);
+}
+
+
+.slider4-text-Region {
+  margin: 2.5px 0px;
+  font-size: 13px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+
+.slider4-text-propose {
+  margin: 2.5px 0px;
+  font-size: 13px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+
+.slider4-text-price {
+  display: flex;
+  margin: 2.5px 0px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+.qqaa4411 {
+  font-size: 17px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-weight: bold;
+}
+
+.qaws4152 {
+  font-size: 17px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-weight: bold;
+}

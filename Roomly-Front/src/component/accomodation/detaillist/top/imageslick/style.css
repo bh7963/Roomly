@@ -1,0 +1,117 @@
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 15px 25px 25px 25px;
+  width: 1200px;
+  height: auto;
+
+  max-width: 1200px;
+  z-index:50;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 1000;
+
+}
+
+/* .thumbnail-slider {
+  margin-top: 10px;
+  width: 100%;
+} */
+
+.thumbnail-slider .thumbnail-image {
+  width: 140px;
+  height: 100px;
+  margin: 20px 5px 5px 5px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: border 0.3s; opacity: 0.3s;
+}
+
+.thumbnail-slider .thumbnail-image.active {
+  opacity: 1;
+  border: 3px solid #5CC3D6;
+}
+
+.large-modal-image {
+  width: 100%;
+  height: 800px;
+  background-size: 100%;
+}
+
+
+.room-detail-modal-close-btn{
+
+  background: none;
+  border: none;
+  background-image: url(/public/images/accommodationlist/Multiply.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  z-index: 5;
+ 
+}
+
+
+.slick-prev:before, .slick-next:before {
+    font-family: 'slick';
+    font-size: 40px;
+    line-height: 1;
+    opacity: .75;
+    color:black;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    z-index: 80;
+}
+
+.slick-prew{
+  position:relative;
+}
+.slick-prev:before{
+  position: absolute;
+  right: 0px;
+
+}
+
+
+.thumbnail-image.active {
+  border: 2px solid #00ACCF;
+}
+
+.room-card-image {
+  position: relative;
+  cursor: pointer;
+}
+
+.room-card-image img {
+  width: 150px;
+  height: 100px;
+  object-fit: cover;
+}
+
+/* .image-count {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 3px 6px;
+  font-size: 12px;
+} */

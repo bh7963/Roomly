@@ -1,0 +1,243 @@
+#review-list-wrapper{
+  display: flex;
+  width: 1120px;
+  margin-bottom: 30px;
+  justify-content: center;
+  
+}
+
+#review-list-wrapper .review-list-container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1170px;
+  padding: 50px 50px 50px 50px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#review-list-wrapper .review-title{
+  color: #52607C;
+  font-size: 24px;
+  font-weight: 600;
+
+}
+
+#review-list-wrapper .sort-options{
+  padding: 20px;
+  color: #52607C;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+/* 분류 스타일 */
+
+.sort-dropdown {
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+  margin-right: 1%;
+}
+
+.sort-dropdown label {
+  margin-right: 10px;
+}
+
+#sortOptions {
+  padding: 5px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffe9e9;
+  cursor: pointer;
+}
+
+
+
+/* 리뷰 점수 박스 */
+
+#review-overall{
+  justify-content: center;
+
+
+  margin: 40px 0px 20px 90px;
+  display: flex;
+
+  width: 800px;
+  height: 100px;
+  background-color: #FCFCFC;
+  border-radius: 10px;
+  border: solid 1px #F3F3F3;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+#review-overall .review-box{
+  gap: 5px;
+  display: flex;
+  align-items: center;
+}
+
+#review-overall  .review-star-icon{
+  background-image: url('/public/images/accommodationlist/Bic\ Hand\ Drawn\ Star.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 35px;
+  height: 35px;
+}
+
+#review-overall .rating-score {
+  font-size: 30px;
+  font-weight: bold;
+  color: #f39c12;
+
+}
+
+#review-overall .rating-text {
+  font-size: 22px;
+  font-weight: 600;
+  margin-left: 10px;
+  color: #52607C;
+}
+
+#review-overall .rating-count {
+  font-size: 14px;
+  margin-left: 10px;
+  color: #888;
+}
+
+
+/* 댓글란 */
+.review-wrapper{
+  display: flex;
+  justify-content: center;
+
+}
+
+#review-card-wrapper{
+  width: 950px;
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  margin-top: 30px;
+
+}
+
+#review-card-wrapper .review-card {
+  width: 950px;
+ 
+  display: flex;
+  flex-direction: column;
+
+  border-bottom: 1px solid #eee;
+  color: #52607C;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  gap: 5px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#review-card-wrapper .review-header {
+  display: flex;
+  margin-bottom: 5px;
+  align-items: center;
+
+  font-size: 12px;
+}
+
+#review-card-wrapper .review-user-id {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+#review-card-wrapper .review-user-icon{
+  background-image: url('/public/images/accommodationlist/Male\ User.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+#review-card-wrapper .review-like-box{
+  display: flex;
+  align-items: center;
+}
+
+
+#review-card-wrapper .review-like-button{
+  background-image: url('/public/images/accommodationlist/Facebook\ Like.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+
+  margin-left: 700px;
+  border: none;
+  
+
+}
+#review-card-wrapper .review-like-button:hover{
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+}
+
+#review-card-wrapper .review-like-count:hover{
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: scale(1.05);
+  color: #1273E6;
+
+}
+
+#review-card-wrapper .review-like-count{
+  font-size: 13px;
+  font-weight: 600;
+  color: #A1A1A1;
+}
+
+
+
+
+
+.review-date {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.review-rating {
+  font-size: 19px;
+  color: #f39c12;
+  margin-bottom: 5px;
+  text-shadow: 1px 1px 2px #f39d12c9;
+}
+
+.review-content {
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.review-footer {
+  font-size: 14px;
+  color: #555;
+  background-color: pink;
+}
+
+.review-footer span {
+  margin-right: 5px;
+  background-color: palegoldenrod;
+}

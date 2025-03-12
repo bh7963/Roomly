@@ -1,0 +1,21 @@
+.image-wrapper{
+    display: flex;
+}
+
+.roomName-gap {
+    margin-top: 20px;
+}
+
+.room-cancle-button-box {
+    display: flex;
+    gap: 10px;
+}
+
+.checkIntime-Outime-box {
+    display: flex;
+    gap: 150px;
+}
+
+.checkcheck1 {
+    gap: 5px;
+}

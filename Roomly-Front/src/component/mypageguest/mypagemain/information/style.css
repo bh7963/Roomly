@@ -1,0 +1,86 @@
+#information-warpper {
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    height: auto;
+    margin-left: 150px;
+}
+
+/* 타이틀 */
+.information-title {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.information-title-text {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+
+}
+
+.information-title-box {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5px; /* 마진처럼 보이게 하는 패딩 */
+    margin-bottom: 50px;
+    border-bottom: 3px solid #eceaea;
+    box-sizing: content-box; /* 패딩이 border에 영향을 주지 않게 함 */
+}
+
+.information-title-ditail-username {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.information-title-ditail {
+    font-size: 16px;
+
+}
+
+/* 메인내용 */
+.information-main {
+    width: 100%;
+    height: 100%;
+    margin-top: 80px;
+}
+
+.information-save-button {
+    cursor: pointer;
+    display: flex;
+    margin-top: 40px;
+    margin-left: 600px;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgb(245, 187, 208);
+    border: solid 1px rgba(0, 0, 0, 0.1);
+
+
+    width: 100px;
+    height: 48px;
+
+    font-size: 19px;
+    font-weight: 500;
+    color: white;
+    font-family: 'Pretendard-Regular';
+    background-color: rgb(252, 171, 201);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(255, 98, 117, 0.3);
+    transition: backg
+    round-color 0.3s ease, transform 0.2s ease;
+}
+
+.checkMessageError {
+    color: red;
+    font-size: 13px;
+    background-color: rgb(245, 187, 208);
+}

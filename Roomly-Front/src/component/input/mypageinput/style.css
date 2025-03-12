@@ -1,0 +1,129 @@
+#mypageinformation-input-warpper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    height: 80px;
+    margin: 10px 0px 10px 20px;
+    font-size: 20px;
+}
+
+/* 비활성 인풋창 css */
+.mypageinformation-input-box-deactivation {
+    
+    display: flex;
+    width: 600px;
+}
+
+.mypageinformation-input-inputbox-deactivation {
+
+    width: 200px;
+    height: 35px;
+    padding: 12px 15px;
+    font-size: 23px;
+    margin-right: 35px;
+}
+
+.mypageinformation-input-area-deactivation {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkMessageError-deactivation {
+    color: red;
+    font-size: 13px;
+
+
+}
+
+
+/* 인풋창 css */
+.mypageinformation-input-box {
+    
+    display: flex;
+    width: 600px;
+}
+
+.mypageinformation-input-title {
+    width: 200px;
+    padding: 12px 15px;
+    font-family: 'Pretendard-Regular';
+    font-size: 23px;
+
+    margin-right: 20px;
+}
+
+.mypageinformation-input-inputbox {
+    width: 85%;
+    padding: 12px 15px;
+    border: 1px solid rgba(188, 188, 188, 1);
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    font-family: 'Pretendard-Regular';
+    font-size: 17px;
+}
+
+.mypageinformation-input-area{
+    display: flex;
+    width: 400px;
+
+    gap: 10px;
+}
+
+.mypageinformation-input {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkMessageError {
+    color: red;
+    font-size: 13px;
+
+
+}
+
+/* 버튼창 css */
+
+.mypageinformation-telnumber-change-button-active {
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 10px 20px;
+    background-color: rgb(245, 187, 208);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    height: 47px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;    
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.mypageinformation-telnumber-change-button-disable {
+    flex-shrink: 0;
+    padding: 10px 20px;
+    background-color:rgba(131, 130, 130, 0.8);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    height: 47px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;    
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+
+.mypageinformation-telnumber-change-button:active {
+
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+}

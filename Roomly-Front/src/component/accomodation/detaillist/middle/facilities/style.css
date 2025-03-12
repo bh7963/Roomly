@@ -1,0 +1,88 @@
+#facilitiesCard-middle-wrapper{
+  display:flex;
+  flex-direction: column;
+
+  gap: 30px;
+  width: 96.5%;
+  max-width: 1170px;
+  margin: 0 auto;
+ 
+  box-sizing: border-box;
+    color: #52607C;
+    background-color: #f9f9f9;
+    padding: 40px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+#facilitiesCard-middle-wrapper .facilitiesCard-middle-title{
+  
+  font-weight: 600;
+  font-size: 22px;
+}
+
+
+#facilitiesCard-middle-wrapper .facilities-middle-card {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 한 줄에 두 개씩 */
+    gap: 10px; 
+    
+  }
+
+  #facilitiesCard-middle-wrapper .facilities-middle-item {
+
+gap: 20px;
+  display: flex;
+  align-items: center;
+
+
+  align-items: center;
+  font-size: 16px;
+  width: 150px;
+}
+
+
+  /* 기본 아이콘 스타일 */
+  #facilitiesCard-middle-wrapper .facility-middle-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 8px;
+    display: inline-block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    
+  }
+  
+
+
+  /* 개별 아이콘 이미지 설정 */
+  .dog-icon {
+    background-image: url('/public/images/accommodationlist/Dog.png');
+  }
+  
+  .smoke-free-icon {
+    background-image: url('/public/images/accommodationlist/Smoking.png');
+  }
+  
+  .spa-icon {
+    background-image: url('/public/images/accommodationlist/Spa.png');
+  }
+  
+  .bbq-icon {
+    background-image: url('/public/images/accommodationlist/Grill.png');
+  }
+  
+  .wifi-icon {
+    background-image: url('/public/images/accommodationlist/Wi-Fi.png');
+  }
+  
+  .parking-icon {
+    background-image: url('/public/images/accommodationlist/Parking.png');
+  }
+  
+  .pool-icon {
+    background-image: url('/public/images/accommodationlist/Lap\ Pool.png');
+  }
+  

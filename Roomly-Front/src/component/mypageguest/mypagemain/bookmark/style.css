@@ -1,0 +1,70 @@
+.booking-main {
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 700px;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button.active {
+    background: var(--dark-pink);
+    color: white;
+    font-weight: bold;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}
+
+.booking-title {
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+
+.booking-title-text {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+}
+
+.booking-title-box {
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+    box-sizing: content-box;
+}
+
+.booking-title-detail {
+    font-size: 16px;
+}
+
+.booking-warpper {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+}

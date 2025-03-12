@@ -1,0 +1,126 @@
+.middle-wrapper{
+  width: 100%;
+max-width: 1170px;
+margin: 0 auto;
+padding: 20px;
+box-sizing: border-box;
+
+}
+
+
+#room-list-container {
+  width: 100%;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 20px;
+  box-sizing: border-box;
+
+}
+
+#room-list-container .room-list-title{
+  color: #52607C;
+  font-size: 22px;
+  font-weight: 600;
+
+  padding: 50px 0px 20px 10px;
+
+}
+
+#room-list-container .room-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+}
+
+#accommodation-info-section{
+  display: flex;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top:30px;
+  background-color: #f9f9f9;
+  
+  
+}
+
+#accommodation-info-section .accommodation-info {
+ display: flex;
+ flex-direction: column;
+
+  padding: 40px;
+  border-radius: 5px;
+  gap: 50px;
+
+}
+
+.accommodation-info-introduction-divider{
+  margin-top: 50px;
+  border-bottom:#D6D6D6 solid 2px;
+}
+
+#accommodation-info-section .accommodation-info-introduction{
+
+  font-weight: 600;
+  font-size: 20px;
+
+  margin-bottom: 10px;
+}
+
+
+/* 객실 더보기 버튼 */
+
+#room-list-container .show-more-btn,
+.show-less-btn {
+  background-color: #ffff;
+  color: #52607C;
+  border: 1px solid #52607C;
+  padding: 10px 20px;
+  margin-top: 20px;
+  height: 50px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#room-list-container .show-more-btn:hover,
+.show-less-btn:hover {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+
+  background-color: rgba(0, 189, 227, 0.4);
+}
+
+#accommodation-info-section .accommodation-info-introduction{
+  color: #52607C;
+}
+
+#accommodation-info-section .accommodation-info-content{
+  color: #52607C;
+  font-size: 12px;
+}
+
+#accommodation-info-section .accommodation-info-content-container{
+ display: flex;
+ flex-direction: column;
+ 
+}
+
+
+#accommodation-info-section .accommodation-info-container-left-icon{
+  margin-bottom: 20px;
+  background-image: url('/public/images/accommodationlist/Quote\ Left.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+
+}
+
+#accommodation-info-section .accommodation-info-container-right-icon{
+  margin-top: 20px;
+  background-image: url('/public/images/accommodationlist/Get\ Quote.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+
+  align-self: end;
+}

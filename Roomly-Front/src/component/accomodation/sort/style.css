@@ -1,0 +1,96 @@
+.accommodation-list {
+    width: 100%;
+  }
+  
+  .accommodation-cards {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .accommodation-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+  }
+  
+  .accommodation-image {
+    width: 150px;
+    height: 100px;
+    margin-right: 20px;
+    background-color: #f0f0f0;
+  }
+  
+  .accommodation-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+  
+  .accommodation-info p {
+    margin: 5px 0;
+  }
+  
+  .details-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background-color: #00ACCF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  /* Pagination 스타일 */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .page-btn {
+    padding: 10px;
+    margin: 0 5px;
+    background-color: #f0f0f0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .page-btn.active {
+    background-color: #00ACCF;
+    color: white;
+  }
+  
+  .page-btn:hover {
+    background-color: #00ACCF;
+    color: white;
+  }
+  
+  /* 리스트 헤더 정렬 스타일 */
+  .list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .sort-dropdown {
+    display: flex;
+    align-items: center;
+  }
+  
+  .sort-dropdown label {
+    margin-right: 10px;
+  }
+  
+  #sortOptions {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+  }
+  

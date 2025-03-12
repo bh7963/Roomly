@@ -1,0 +1,207 @@
+#host-signUp-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1920px;
+    height: 1250px;
+    background-color: #f1ecef7c;
+    position: relative;
+    box-sizing: border-box;
+}
+
+#business-wrapper {
+    margin-bottom: 8px;
+    margin-left: 10px;
+}
+
+.startDay-container {
+    flex-direction: column;
+    gap: 10px;
+
+
+    border-radius: 8px;
+    background-color: white;
+    width: 290px;
+
+}
+
+.startDay {
+    font-weight: bold;
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    display: flex;
+    margin-bottom: 5px;
+}
+
+.host-input-field {
+    
+    width: 265px;
+    padding: 12px 15px;
+    border: 1px solid rgba(188, 188, 188, 1);
+    border-radius: 4px;
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+}
+
+.host-input-field:focus {
+    outline: none;
+    border-color: rgba(188, 188, 188, 1);
+    cursor: pointer;
+    box-shadow: 0 0 5px;
+}
+
+
+/* 에러 메시지 스타일 */
+.error-message {
+    color: #ff4d4f;
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.host-input-box-signup {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    max-height: 1150px;
+    /* 높이를 조정하여 요소가 잘리지 않도록 */
+    padding: 40px;
+    /* 패딩을 조정하여 여유 공간 추가 */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    /* 위와 아래 사이의 공간을 자동 조정 */
+    z-index: 10;
+}
+
+.HostLogin-button-host {
+    flex-direction: column;
+    padding: 20px 82px;
+    background-color: #fa919d;
+    color: white;
+    border: none;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+}
+
+.HostLogin-button-guest {
+    flex-direction: column;
+    padding: 20px 76px;
+    background-color: rgba(157, 160, 165, 1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.HostLogin-button-guest:hover {
+    color: #ccc;
+}
+
+.host-inputBox {
+    margin-bottom: 13px;
+    /* 간격을 조정 */
+}
+
+.host-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+.host-button-container2 {
+    margin-bottom: 10px;
+    /* 간격을 조정 */
+}
+
+.host-agree {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+    margin-left: 8px;
+}
+
+.host-agreeButton {
+    width: 13px;
+    height: 13px;
+    border-radius: 4px;
+    background-color: #ccc;
+    /* 예시로 회색 배경 추가 */
+    margin-right: 5px;
+    /* 버튼과 메시지 사이에 여백 추가 */
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+.host-agreeMessage {
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    margin-bottom: 5px;
+    /* 간격을 조정 */
+}
+
+.host-button-clear-disable {
+    margin-left: 5px;
+    width: 300px;
+    padding: 10px;
+    background-color: var(--input-solid-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+}
+
+.host-button-clear-active {
+    cursor: pointer;
+    margin-left: 5px;
+    width: 300px;
+    padding: 10px;
+    background-color: #fa919d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+}
+
+.host-button-clear :enabled {
+    background-color: #fa919d;
+    cursor: pointer;
+}
+
+.host-already-signIn {
+    margin-bottom: 17px;
+    padding: 0px 0px 0px 35px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.host-already {
+    font-size: 11px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+}
+
+.host-mainPageGo {
+    font-size: 9px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}

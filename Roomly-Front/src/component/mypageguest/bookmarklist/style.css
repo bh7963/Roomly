@@ -1,0 +1,68 @@
+#bookmark-wrapper {
+    display: flex;
+    align-items: center;
+
+    width: 700px;  
+    height: 150px;  
+    border: solid 6px rgba(247, 219, 219, 0.637);
+
+    margin: 5px 0px;
+    border-radius: 5px;
+}
+
+.bookmark-image {
+    height: 130px;
+    width: 130px;
+    margin: 0 15px;
+    border-radius: 15px;
+    background-color: #ff94a0;
+}
+
+.bookmark-detail {
+    display: flex;
+    flex-direction: column;
+    
+    width: auto;
+    height: 130px;
+    justify-content: space-between;
+    font-family: 'Pretendard-Regular';
+}
+
+.bookmark-hotel-name{
+    font-size: 25px;
+    color: rgb(75, 74, 74);
+}
+
+.bookmark-hotel-address {
+    font-size: 15px;
+    color: rgb(75, 74, 74);
+}
+
+.bookmark-hotel-score-navigator {
+    display: flex;
+
+    width: 520px;
+    justify-content: space-between;
+}
+
+.bookmark-hotel-score {
+    font-size: 15px;
+    color: rgb(75, 74, 74);
+}
+
+.bookmark-hotel-navigator {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 100%;    
+    background-color: #ff94a0;
+    border: solid 2px rgba(240, 203, 203, 0.637);;
+    border-radius: 5px;
+
+    font-weight: 700;
+    font-size: 18px;
+    color: rgb(255 , 255, 255, 1);
+}

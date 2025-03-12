@@ -1,0 +1,87 @@
+.reservationstatus-main {
+    margin-left: 150px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 700px;
+    height: auto;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-left: 150px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.pagination button.active {
+    background: var(--dark-pink);
+    color: white;
+    font-weight: bold;
+}
+
+.pagination button:hover {
+    background-color: #ddd;
+}
+
+.reservationstatus-title {
+    width: 100%;
+    height: 50px;
+    font-size: 27px;
+    font-weight: 600;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+    margin-bottom: 50px;
+    margin-top: 30px;
+    margin-left: 150px;
+}
+
+.reservationstatus-title-text {
+    font-size: 23px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+}
+
+.reservationstatus-title-box {
+    display: flex;
+    align-items: flex-end;
+    width: 700px;
+    padding-bottom: 5px;
+    margin-bottom: 50px;
+    box-sizing: content-box;
+    justify-content: space-between;
+}
+
+.reservationstatus-title-detail {
+    font-size: 16px;
+}
+
+.reservationstatus-warpper {
+    width: 100%;
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.add-button {
+    cursor: pointer;
+    width: 80px;
+    height: 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    background-color: rgba(245, 187, 208);
+}
+
+.qwer123-123 {
+    display: flex;
+}

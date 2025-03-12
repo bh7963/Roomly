@@ -1,0 +1,129 @@
+.slider6-warpper {
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.slider6-container {
+  overflow: hidden;
+  width: 100%;
+  max-width: 1190px;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.slider6-title {
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+
+  height: 40px;
+
+  margin-top: 50px;
+  margin-left: 20px;
+
+  text-align: left;
+
+  font-weight: 600;
+}
+
+.slider6-image-container {
+  width: 1200px;
+  height: 220px;
+  display: flex;
+  gap: 3px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.slider6-image {
+  width: 1200px;
+  height: 220px;
+}
+
+.slider6-slide {
+  cursor: pointer;
+
+  border-radius: 15px;
+  width: 100%;
+  height: 180px;
+  max-width: 180px;
+  margin-left: 15px;
+  border: solid 6px rgba(247, 219, 219, 0.637);
+  box-sizing: border-box;
+
+}
+
+.slider6-ranktext {
+  width: 177px;
+  height: 20px;
+  margin-top: 5px;
+  margin-left: 19px;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+
+}
+
+.slider6-button-container {
+  justify-content: center;
+  width: 1225px;
+  height: 45px;
+
+  margin-top: -145px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider6-left {
+  z-index: 1;
+  margin-top: 160px;
+  margin-right: -40px;
+  width: 45px;
+  height: 45px;
+}
+
+.slider6-right {
+  margin-top: 160px;
+  margin-left: -25px;
+  width: 45px;
+  height: 45px;
+  background-color: white; 
+}
+
+.slider6-left-button {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%; /* 이미지 크기를 버튼 크기에 맞게 100%로 설정 */
+  background-position: center; /* 이미지가 중앙에 배치되도록 */
+  border-radius: 30px;
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  background-image: url(/public/images/left-arrow.png);
+  background-color: white;
+  transition: 1s;
+}
+
+.slider6-right-button {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: 100%; /* 이미지 크기를 버튼 크기에 맞게 100%로 설정 */
+  background-position: center; /* 이미지가 중앙에 배치되도록 */
+  border-radius: 30px; /* 둥근 모서리 */
+  cursor: pointer;
+  width: 45px;
+  height: 45px;
+  background-image: url(/public/images/left-arrow.png);
+  background-color: white;
+  transition: 1s;
+  transform: rotate(180deg); /* 이미지를 180도 회전 */
+}

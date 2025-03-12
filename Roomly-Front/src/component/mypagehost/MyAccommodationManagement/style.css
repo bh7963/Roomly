@@ -1,0 +1,200 @@
+
+/* 등록 버튼 */
+.register-button {
+    align-items: center;
+    margin-bottom: 10px; /* 하단 여백 */
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #F9D978;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    background-color: #D9D9D9;
+}
+
+
+.accommodation-management-page {
+    /* width: 100%; */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .page-subtitle {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+  }
+  
+  .tab-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .tab-button.active {
+    background-color: #5CC3D6;
+    color: #fff;
+    border-color: #5CC3D6;
+  }
+  
+  .register-button {
+    margin-left: auto;
+    padding: 8px 16px;
+    font-size: 14px;
+    color: #fff;
+    background-color: #f0c040;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .accommodation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  #accommodation-card {
+    width: 800px;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .card-date {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+  }
+  
+  .card-content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  
+  .card-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    background-color: #ccc;
+  }
+  
+  .card-info {
+    flex-grow: 1;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  
+  .status-tag {
+    font-size: 12px;
+    color: #5CC3D6;
+    background-color: #e6f4ff;
+    padding: 4px 8px;
+    border-radius: 5px;
+  }
+  
+  .room-id {
+    font-size: 12px;
+    color: #999;
+  }
+  
+  .room-name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .room-type, .guest-name, .phone-number, .number-of-guests {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .card-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #5CC3D6;
+  }
+  
+
+  .tab-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .tab-button.active {
+    background-color: #5CC3D6;
+    color: #fff;
+  }
+
+  .edit-button, .delete-button {
+    background-color: #5CC3D6;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin: 4px 0;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+  }
+  
+  .delete-button {
+    background-color: #FFFFFF;
+    color: #282828;
+    border: 1px solid #ddd;
+    
+  }
+  
+  .edit-button:hover, .delete-button:hover {
+    opacity: 0.8;
+  }
+  

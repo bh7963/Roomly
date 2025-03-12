@@ -1,0 +1,249 @@
+/* .find2는 전체 화면을 감싸는 부모 div */
+.find2 {
+    height: 818px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1ecef7c;
+}
+
+/* .find-wrapper는 검색 화면의 내부 레이아웃을 감싸는 div */
+.find-wrapper {
+    width: 360px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* .find-body는 제목과 입력 요소들을 flex로 배치하는 컨테이너 */
+.find-body {
+    align-items: center;
+    gap: 70px;
+    margin-bottom: 10px;
+}
+
+.find-body2 {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+/* 제목 스타일 */
+.find-title {
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Pretendard-Regular';
+    color: #414141;
+    margin-bottom: 20px;
+    margin-right: 10px;
+}
+
+/* 이름과 전화번호 입력 박스 스타일 */
+.nameBox,
+.telNumberBox {
+    margin-bottom: 25px;
+}
+
+/* 입력 박스에 적용되는 스타일 */
+.nameBox-title,
+.telNumberBox-title {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* InputBox 스타일 */
+.nameBox-input,
+.authNumber-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+/* 전화번호 인증 박스 스타일 */
+.telNumberBox-input {
+    display: flex;
+    gap: 10px;
+}
+
+.telNumberBox-input input {
+    flex: 1; /* Flexbox로 너비 조정 */
+    padding: 10px;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 8px;
+}
+
+.authNumber-input {
+    padding: 10px;
+}
+
+/* 버튼 스타일 */
+.find-button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--input-solid-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+/* 활성화된 버튼 스타일 */
+.find-button:enabled {
+    background-color: #fa919d;
+    cursor: pointer;
+}
+
+/* 메인 페이지로 이동 버튼 스타일 */
+.mainPage-movig {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    text-decoration: underline;
+    margin-top: 15px;
+}
+
+.mainPage-movig-input {
+    cursor: pointer;
+}
+.find-login-buttons{
+    margin-top: 10px;
+}
+
+/* 게스트, 호스트 선택 버튼 스타일 */
+.guest-login-button1,
+.host-login-button2 {
+    margin-left: 62px;
+    text-align: right;
+    padding: 10px 0px 0px 0px; /* 버튼 내부 여백 */
+    font-weight: bold; /* 글씨 두껍게 */
+    margin-top: 20px;
+}
+
+.GuestLogin-button-guest1,
+.HostLogin-button-guest2 {
+    padding: 8px 10px; /* 버튼 내부 여백 */
+}
+
+.GuestLogin-button-host1,
+.HostLogin-button-host2 {
+    padding: 8px 13px; /* 버튼 내부 여백 */
+}
+
+.GuestLogin-button-guest1,
+.HostLogin-button-host2 {
+    border-radius: 5px; /* 테두리 둥글게 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    font-weight: bold; /* 글씨 두껍게 */
+    transition: background-color 0.3s; /* 호버 시 부드러운 색 변화 */
+    background-color: #fa919d;
+    color: white;
+    border: none;
+    font-size: 16px;
+    
+}
+
+.GuestLogin-button-host1,
+.HostLogin-button-guest2 {
+    border-radius: 5px; /* 테두리 둥글게 */
+    cursor: pointer; /* 마우스 커서 포인터로 변경 */
+    text-decoration: none; /* 링크 밑줄 제거 */
+    font-weight: bold; /* 글씨 두껍게 */
+    transition: background-color 0.3s; /* 호버 시 부드러운 색 변화 */
+
+    background-color: rgba(157, 160, 165, 1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.GuestLogin-button-host1:hover,
+.HostLogin-button-guest2:hover {
+    color: #ccc;
+}
+
+/* 모달 오버레이 스타일 */
+.find-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000; /* 다른 요소들보다 앞에 표시 */
+}
+
+/* 모달 콘텐츠 스타일 */
+.modal-content2 {
+    background-color: white;
+    padding: 5px;
+    border-radius: 8px;
+    height: 180px;
+    width: 330px; /* 모달의 너비 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+/* 닫기 버튼 스타일 */
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px; /* 닫기 버튼을 우측 상단에 배치 */
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #333;
+}
+
+/* 모달 내용 제목 스타일 */
+.find-modal-body h2 {
+    font-size: 20px;
+    font-family: 'Pretendard-Regular';
+    margin-bottom: 35px;
+    color: #333;
+}
+
+/* 아이디 결과 텍스트 스타일 */
+.find-result {
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    color: #555;
+    margin-bottom: 50px;
+}
+
+/* 비밀번호 찾기 버튼 스타일 */
+.find-password-button {
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    margin-top: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+}

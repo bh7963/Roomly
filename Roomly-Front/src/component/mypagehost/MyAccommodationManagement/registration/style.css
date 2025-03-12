@@ -1,0 +1,134 @@
+#host-accommodation-register-wrapper{
+  width: 1200px;
+  background-color: cadetblue;
+
+}
+
+.test{
+  display: flex;
+}
+
+
+#registration-wrapper {
+  width: 800px;
+  margin-left: 135px;
+}
+
+#registration-wrapper .welcome-message{
+
+  width: 400px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+/* 너비를 800px로 조정 */
+#registration-wrapper form {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  max-width: 800px; 
+}
+
+#registration-wrapper div {
+  margin-bottom: 20px;
+}
+
+#registration-wrapper h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#registration-wrapper label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+#registration-wrapper input[type="text"],
+#registration-wrapper input[type="number"],
+#registration-wrapper textarea {
+
+  width: 90%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+#registration-wrapper input[type="file"] {
+  margin-top: 10px;
+} 
+
+/* 기본 높이 설정 */
+#registration-wrapper textarea {
+  resize: vertical;
+  height: 100px; 
+} 
+
+/* 버튼 */
+#registration-wrapper button {
+  background-color: #5CC3D6; 
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+} 
+
+#registration-wrapper .representative-image-button{
+  background-color: #5CC3D6; 
+  color: white;
+  border: none;
+  width: 100px;
+  font-size: 8px;
+}
+
+#registration-wrapper button:hover {
+  background-color: #ccc; 
+}
+
+#registration-wrapper .address-search-button{
+  width: 100px;
+  background-color: #5CC3D6;
+}
+
+#registration-wrapper .approval-button{
+  width: 100px;
+  background-color: greenyellow;
+}
+
+#registration-wrapper .rejection-button{
+  width: 100px;
+  background-color: rebeccapurple;
+}
+
+#registration-wrapper .delete-image-button{
+  width: 5px;
+  height: 10px;
+  font-size: 8px;
+  text-align: center;
+  background-color: blueviolet;
+}
+
+
+
+/* @media (max-width: 800px) {
+  #registration-wrapper form {
+      padding: 15px;
+  }
+
+  input[type="text"],
+  input[type="number"],
+  textarea,
+  button {
+      font-size: 14px;
+  }
+}  */

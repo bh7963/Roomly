@@ -1,0 +1,470 @@
+/* 숙소 이미지 디테일 모달창 & 슬라이더 */
+#image-container {
+  display: flex;
+  max-width: 1170px;
+  height: 347px;
+}
+
+#image-container .large-image-container {
+  width: 100%;
+  height: 100%;
+}
+
+#image-container .large-image {
+  width: 100%;
+  height:100%;
+  transition: transform 0.3s ease;
+}
+
+#image-container .large-image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#image-container .small-image-grid-container {
+  position: relative;
+  flex-basis: 80%;
+}
+
+#image-container .small-image-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  flex-basis: 80%; /* Takes up 40% of the space */
+}
+
+#image-container .small-image {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+#image-container .small-image:hover {
+  transform: scale(1.05);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#image-container .button-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 8%;
+  left:78%;
+  transform: translate(1.05);
+  grid-column: span 1;
+  z-index: 10;
+  gap: 2px;
+
+  padding: 8px;
+  background-color: rgba(0, 189, 227, 0.4);
+  border-radius: 6px;
+  font-size: 12px;
+  color: #ffff;
+  border: none;
+  cursor: pointer;
+}
+
+#image-container .image-icon{
+  background-image: url('/public/images/accommodationlist/Image.png');
+  background-size: cover;
+  width: 18px;
+  height: 18px;
+  background-repeat: no-repeat;
+  margin-top: 2px;
+
+}
+
+#image-container .button-box:hover {
+  transform: scale(1);
+  background-color: rgb(186, 245, 255,0.5);
+  cursor: pointer;
+}
+
+/* 모달 스타일 */
+
+.facility-modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 180px;
+  background-color: #ffff;
+  border-radius: 8px;
+  padding: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.facility-modal-close-btn{
+
+  background-image: url('/public/images/accommodationlist/Multiply.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: #ffff;
+
+}
+
+.facility-modal-close-btn:hover{
+  opacity: 1;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+#facility-modal-close-box{
+
+  display: flex;
+  align-items: center;
+ 
+}
+
+.facility-icons-box{
+
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+
+.facility-icons {
+
+  color: #5C666A;
+  margin-left: 50px;
+  margin-top: 10px;
+  display: flex;
+  flex-wrap: wrap; /* 여러 줄로 정렬 */
+  gap: 5px;       /* 아이템 간 간격 */
+  max-width: 400px; /* 원하는 너비로 설정 */
+}
+
+.facility-item {
+  gap: 10px;
+  display: flex;
+  align-items: center;
+  width: 45%;        /* 각 아이템을 2줄로 정렬될 수 있도록 설정 */
+
+}
+
+.facility-modal-title{
+  margin-left: 80px;
+  color: #5C666A;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* 큰 이미지 스타일 */
+.large-modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+/* 썸네일 컨테이너 스타일 */
+.thumbnail-row {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* 썸네일 이미지 스타일 */
+.thumbnail-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  cursor: pointer;
+  border-radius: 4px;
+  opacity: 0.7;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.thumbnail-image:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.thumbnail-image.active {
+  border: 2px solid #00ACCF;
+  opacity: 1;
+}
+
+
+/*  숙소 정보 카드  */
+#accommodation-detail {
+  width: 100%;
+  max-width: 1170px;
+  /* padding: 20px; */
+  background-color: #ffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+#accommodation-detail .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+ padding: 30px 30px 30px 30px;
+}
+
+#accommodation-detail .title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+}
+
+#accommodation-detail .accommodation-type-container{
+  display: flex;
+  align-items: center;
+}
+
+
+#accommodation-detail .accommodation-type {
+  font-size: 15px;
+  margin-right: 10px;
+  color: #999;
+  margin-top: 4px;
+}
+
+#accommodation-detail .stars {
+  color: #ffd700;
+  font-size: 18px;
+  margin-right: 10px;
+  box-shadow: #555;
+}
+
+#accommodation-detail .accommodation-name{
+  color: #52607C;
+  font-size: 28px;
+
+}
+
+#accommodation-detail .price-section {
+  display: flex;
+  font-size: 24px;
+  color: #52607C;
+  align-items: center;
+  margin-top: 10px;
+  
+
+}
+
+#accommodation-detail .price-per-night{
+margin-left: 10px;
+ font-size: 15px;
+ color: #999;
+}
+
+#content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+#content .review-section,
+#content .services-section,
+#content .location-section {
+  width: 30%;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+#content .review-section:hover,
+#content .services-section:hover,
+#content .location-section:hover 
+{  cursor: pointer;
+  transform: scale(1.03);}
+
+
+#content .review-score-box{
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  justify-content: center;
+}
+
+#content .right-arrow-icon-box{
+  position: relative;
+  width: 130px;
+  height: 18px;
+}
+
+#content .right-arrow-icon-button{
+  border: none;
+  background-color: #ffff;
+  position: absolute;
+  left: 120px;
+  background-image: url('/public/images/accommodationlist/Forward.png');
+  width: 13px;
+  height: 15px;
+  background-repeat: no-repeat;
+
+}
+
+#content .right-arrow-icon:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+
+}
+
+#content .review-score {
+  width: 50px;
+  height: 21px;
+  text-align: center;
+  line-height: 190%;
+  font-size: 12px;
+  font-weight: bold;
+  margin-right: 10px;
+  color: #ffff;
+  border-radius: 35px;
+  background-color: #00ACCF;
+
+}
+
+#content .heder-title{
+  color: #5C666A;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+#content .review-snippet {
+  font-size: 13px;
+  color: #555;
+  line-height : 1.7;
+  
+}
+
+#content .quantity-of-review{
+  color: #5C666A;
+}
+
+#content .heder-title-container{
+  display: flex;
+}
+
+#content .view-all-facilities-btn{
+  border: none;
+  margin-left: 130px;
+  background-color: #ffff;
+  background-image: url('/public/images/accommodationlist/Forward.png');
+  width: 13px;
+  height: 15px;
+  background-repeat: no-repeat;
+  
+}
+
+#content .view-all-facilities-btn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+
+}
+
+#content .services{
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 17px;
+}
+
+.service-icon {
+  background-color: #ffff;
+  width: 110px;
+  height: 15px;
+  font-size: 14px;
+  color:#5C666A;
+  
+}
+
+#content svg{
+  margin-right: 8px;
+  color: #5C666A;
+}
+
+/* 위치 정보 카드 */
+#content .location-section{
+  background-image: url('/public/images/accommodationlist/GoogleMapTA\ 1.png');
+
+}
+
+#content .view-all-location-btn{
+  border: none;
+  margin-left: 200px;
+  background-color: #ffff;
+  background-image: url('/public/images/accommodationlist/Forward.png');
+  width: 13px;
+  height: 15px;
+  background-repeat: no-repeat;
+}
+
+#content .view-all-location-btn:hover{
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+#content .address-container{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#content .address-icon{
+  background-image: url('/public/images/accommodationlist/Location.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 30px;
+  height: 30px;
+
+  margin-top: auto;
+}
+#content .accommodation-address{
+  color: #5C666A;
+  font-size: 13px;
+
+  margin-top: 25px;
+}
+
+#content .show-map-detail-button{
+  background: none;
+  border: none;
+  font-size: 14px;
+  color: #007bff;
+  margin-top: 15px;
+
+}
+
+
+#content .show-map-detail-button:hover{
+  transform: scale(1);
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: underline;
+  
+}

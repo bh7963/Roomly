@@ -1,0 +1,228 @@
+#guest-signUp-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 1920px;
+    height: 1050px;
+    background-color: #f1ecef7c;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.GuestLogin-button-host {
+    flex-direction: column;
+    padding: 20px 82px;
+    background-color: rgba(157, 160, 165, 1);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+}
+
+/* 로그인하기 버튼을 왼쪽 위에 배치 */
+.GuestLogin-button-guest {
+
+    flex-direction: column;
+    padding: 20px 76px;
+    background-color: #fa919d;
+    color: white;
+    border: none;
+    font-size: 16px;
+}
+
+.GuestLogin-button-host:hover {
+    color: #ccc;
+}
+
+.guest-input-box-signup {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    max-height: 950px;
+    /* 높이를 조정하여 요소가 잘리지 않도록 */
+    padding: 40px;
+    /* 패딩을 조정하여 여유 공간 추가 */
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    /* 위와 아래 사이의 공간을 자동 조정 */
+    z-index: 10;
+    box-sizing: border-box;
+}
+
+.guest-inputBox {
+    margin-bottom: 13px;
+    /* 간격을 조정 */
+}
+
+.guest-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 5px;
+}
+
+
+.guest-button-container2 {
+    padding: 5px;
+    margin-bottom: 15px;
+    /* 간격을 조정 */
+}
+
+.guest-agree {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1px;
+}
+
+.guest-agreeButton {
+    width: 13px;
+    height: 13px;
+    border-radius: 4px;
+    background-color: #ccc;
+    /* 예시로 회색 배경 추가 */
+    margin-right: 5px;
+    /* 버튼과 메시지 사이에 여백 추가 */
+    margin-bottom: 7px;
+    cursor: pointer;
+}
+
+.guest-agreeMessage {
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    margin-bottom: 5px;
+    /* 간격을 조정 */
+}
+
+.guest-button-clear-disable {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--input-solid-color);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+}
+
+.guest-button-clear-active {
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    background-color: #fa919d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-family: 'Pretendard-Regular';
+    font-weight: bold;
+}
+
+.guest-button-clear :enabled {
+    background-color: #fa919d;
+    cursor: pointer;
+}
+
+.guest-already-signIn {
+    margin-bottom: 17px;
+    padding: 0px 0px 0px 35px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.guest-already {
+    font-size: 11px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+}
+
+.guest-mainPageGo {
+    font-size: 9px;
+    font-family: 'Pretendard-Regular';
+    color: rgb(73, 73, 73);
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: underline;
+    /* 밑줄 추가 */
+}
+
+.snsMessage {
+    font-size: 11px;
+    font-family: 'Pretendard-Regular';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: rgba(157, 160, 165, 1);
+    margin-bottom: 15px;
+
+}
+
+.snsMessage::before,
+.snsMessage::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: rgba(157, 160, 165, 1);
+    margin: 0 6px;
+    /* 선과 텍스트 사이의 간격 */
+}
+
+.snsMessage span {
+    font-size: 12px;
+    font-family: 'Pretendard-Regular';
+    color: rgba(157, 160, 165, 1);
+}
+
+.sns-button-container {
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    /* 버튼 사이의 간격 */
+    margin-top: 5px;
+}
+
+/* sns-button: 기본 SNS 버튼 스타일 */
+.sns-button.kakao {
+
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url(/public/images/kakao-button.png);
+
+}
+
+.sns-button.google {
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    background-image: url(/public/images/google-button.png);
+
+}
+
+.sns-container {
+    position: relative;
+    z-index: 1000;
+    /* 다른 요소들보다 위에 보이도록 설정 */
+}

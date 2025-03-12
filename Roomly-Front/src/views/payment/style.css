@@ -1,0 +1,496 @@
+#payment-wrapper {
+  display: flex;
+
+  flex-direction: column;
+  position: relative;
+  background-color: #f1ecef7c;
+}
+
+#payment-top-wrapper {
+  margin: 0 auto;
+  /* 중앙 정렬 */
+  width: 800px;
+  /* 최소 크기 설정 */
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* 상단에 그림자 효과 추가 */
+  margin-bottom: 5px;
+  /* 상단 아래쪽에 여백 */
+}
+
+/* 헤더 바 스타일 */
+.headerBar {
+  display: flex;
+  align-items: center;
+  /* 헤더 배경색 */
+  padding: 10px 20px;
+  /* 패딩 */
+  margin-bottom: 5px;
+  width: 1100px;
+  /* 최소 크기 설정 */
+}
+
+.headerBar .text {
+  flex-grow: 1;
+  /* 텍스트가 남은 공간을 차지하도록 */
+  font-size: 22px;
+  /* 텍스트 크기 */
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-weight: bold;
+  /* 텍스트 굵기 */
+}
+
+
+#payment-bottom-wrapper {
+  display: flex;
+
+  margin: 0 auto;
+  /* 중앙 정렬 */
+  gap: 60px;
+  /* Change gap from 20px to 10px */
+}
+
+.payImage {
+  height: 200px;
+  width: 310px; /* 원하는 크기로 설정 */
+  display: flex;
+  justify-content: center;
+  margin: 40px;
+  overflow: hidden; /* 이미지가 컨테이너를 넘지 않도록 설정 */
+  border-radius: 8px; /* 이미지에 라운드 효과 추가, 선택사항 */
+}
+
+.payImage img {
+  width: 100%;
+  height: auto;
+  object-fit: cover; /* 이미지 비율을 유지하면서 컨테이너에 맞춤 */
+  margin-left: 20px;
+  border-radius: 20px;
+  border: solid 6px rgba(240, 189, 189, 0.637);
+}
+
+.left-box {
+
+  flex: 0 0 40%;
+  /* Adjusted width */
+  padding-right: 10px;
+  min-width: 350px;
+  /* Decreased minimum width */
+
+  margin-top: 30px;
+  margin-left: 20px;
+  /* background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+  height: 480px;
+
+}
+
+.left-top-title {
+  display: flex;
+  font-size: 16px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  /* 제목 크기 */
+  margin-bottom: 20px;
+  /* 제목과 입력 필드 간격 */
+
+  padding-right: 100px;
+
+  margin-left: 45px;
+  font-weight: bold;
+  /* 제목 굵기 */
+}
+
+
+.payment-input-container3 {
+  gap: 40px;
+  display: flex;
+  margin-left: 40px;
+}
+
+.guest-name,
+.guest-telNumber {
+  gap: 80px;
+
+}
+
+.name-title,
+.telNumber-title {
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  margin-bottom: 7px;
+}
+
+.name-value {
+  border-radius: 4px;
+  padding: 10px 12px;
+  /* height: 40px;
+  width: 80px; */
+  font-size: 15px;
+  background-color: #ddd;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+.telNumber-value {
+  border-radius: 4px;
+  background-color: #ddd;
+  padding: 10px 12px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+/* 구분선 */
+.divider {
+  display: flex;
+  height: 1px;
+  /* 구분선 높이 */
+  background-color: #ddd;
+  /* 구분선 색 */
+  margin: 60px 0 10px 10px;
+  /* 위쪽과 아래쪽 여백 */
+
+}
+
+/* 결제 수단 섹션 */
+.left-bottom {
+
+  margin-top: 15px;
+  /* 위쪽 여백 */
+}
+
+.left-bottom-title {
+  display: flex;
+  font-size: 16px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  margin-top: 55px;
+  margin-bottom: 20px;
+  /* 제목과 입력 필드 간격 */
+
+  padding-right: 100px;
+
+  margin-left: 45px;
+  font-weight: bold;
+  /* 제목 굵기 */
+}
+
+.payment-typeList div.active {
+  background-color: rgba(250, 209, 209, 0.849);
+  border: solid 3px rgba(250, 209, 209, 0.637);
+}
+
+.payment-typeList {
+  margin-left: 40px;
+  margin-right: 20px;
+  display: flex;
+  /* 가로 정렬 */
+  justify-content: space-between;
+  /* 각 상자가 균등하게 배치되도록 */
+  gap: 15px;
+  /* 상자들 사이 간격 */
+}
+
+.payment-typeList div {
+  flex: 1;
+  /* 상자가 균등하게 너비를 차지하도록 설정 */
+  height: 45px;
+  /* 상자의 높이 설정 */
+  width: 60px;
+  background-color: rgba(243, 231, 231, 0.849);
+  border: solid 3px rgba(252, 223, 223, 0.637);
+  /* 상자의 배경색 */
+  border-radius: 8px;
+  /* 모서리 둥글게 */
+  display: flex;
+  /* 상자 내부 정렬을 위해 추가 */
+  align-items: center;
+  /* 상자 내의 컨텐츠 수직 중앙 정렬 */
+  justify-content: center;
+  /* 상자 내의 컨텐츠 수평 중앙 정렬 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* 상자에 약간의 그림자 효과 */
+  cursor: pointer;
+  /* 마우스를 올리면 포인터 커서로 변경 */
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  /* 호버 시 부드러운 애니메이션 */
+}
+
+.payment-typeList div:hover {
+  transform: translateY(-5px);
+  /* 호버 시 상자가 살짝 위로 이동 */
+  background-color: rgba(252, 223, 223, 0.637);
+  /* 호버 시 배경색 변경 */
+}
+
+/* 각 결제 수단 아이콘을 추가하려면 추가적인 스타일을 지정할 수 있습니다 */
+
+.kakaoPay .tossPay .creditCard {
+
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.kakaoPay-image {
+  height: 45px;
+  width: 100px;
+}
+
+.tossPay-image {
+  height: 16px;
+  width: 75px;
+}
+
+.creditCard {
+  font-size: 13px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  background-color: #fff;
+  font-weight: bold;
+  border: 1.5px solid #ebebeb;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 40px;
+  line-height: 37px;
+  margin: 0 9px 12px 0;
+  position: relative;
+  text-align: center;
+}
+
+/* 오른쪽 결제 정보 wrapper */
+
+.page-right {
+  display: flex;
+  /* 또는 grid 사용 시 */
+  flex-direction: column;
+  /* 수직 정렬 */
+  align-items: stretch;
+  /* 모든 자식 요소를 부모 요소의 너비에 맞춤 */
+  flex: 0 0 40%;
+  height: 1000px;
+  min-width: 150px;
+  margin-top: 30px;
+}
+
+.right-top,
+.right-bottom {
+  width: 300px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.right-top-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.right-top-title {
+  font-size: 18px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+
+.right-top-container1,
+.right-top-container2,
+.right-top-container3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.right-top-container4 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.accommodationName,
+.roomType,
+.checkInOut,
+.personnel {
+  font-family: 'Pretendard-Regular';
+  color: rgb(61, 60, 60);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.accommodation-input,
+.roomType-input,
+.checkInOut-input,
+.personnel-input {
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-size: 17px;
+  font-weight: 500;
+}
+
+.check {
+  background-color: #fafafa;
+  width: 60%;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.right-bottom-title {
+  font-size: 18px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.right-bottom-container1 {
+
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.right-bottom-container2 {
+
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  align-items: center;
+}
+
+.room-price1,
+.room-price2 {
+  font-size: 14px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-weight: 500;
+}
+
+.room-price-input1 {
+  font-size: 16px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+
+}
+
+.room-price-input2 {
+  font-size: 16px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-weight: 600;
+}
+
+.total-agree-wrap {
+
+
+  display: flex;
+  align-items: center;
+
+}
+
+.agree-wrap-container {
+  margin-top: 10px;
+}
+
+.agree-wrap1,
+.agree-wrap2,
+.agree-wrap3,
+.agree-wrap4 {
+  display: flex;
+  padding: 10px 0;
+}
+
+.total-label {
+  border-radius: 7px;
+  background-color: #ebe7e7ea;
+  padding: 7px 6px;
+  display: flex;
+  width: 370px;
+  margin-top: 10px;
+}
+
+.total-agree {
+  margin-bottom: 2px;
+  margin-left: 10px;
+  font-size: 15px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+  font-weight: bold;
+}
+
+.list-agree1,
+.list-agree2,
+.list-agree3,
+.list-agree4 {
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 13px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+.list-agree-button {
+
+  display: inline-block;
+
+  text-align: center;
+
+  line-height: 20px;
+
+  cursor: pointer;
+
+
+  margin-bottom: 5px;
+  margin-top: 4.1px;
+
+}
+
+.arrow-icon path {
+  color: rgb(143, 142, 142);
+
+}
+
+.list-agree-button:hover .arrow-icon path {
+  fill: gray;
+  /* Change color on hover */
+}
+
+.arrow-button:hover {
+  background-color: #dcdcdc;
+  /* Change background on hover */
+}
+
+.right-bottom-wrap {
+  padding: 20px;
+  /* 필요에 따라 조정 */
+}
+
+.right-bottom-button {
+  background-color: #ff94a0;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 16px;
+  font-family: 'Pretendard-Regular';
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-top: 5px;
+  width: 310px;
+}
+
+.right-bottom-button:hover {
+  background-color: #fc7e8d;
+}

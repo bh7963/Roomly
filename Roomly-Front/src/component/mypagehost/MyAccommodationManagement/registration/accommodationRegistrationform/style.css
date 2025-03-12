@@ -1,0 +1,196 @@
+.registration-main-wrapper {
+  background-color: #f1ecef7c;
+}
+
+#host-accommodation-register-wrapper {
+  width: 1200px;
+  background-color: #5CC3D6; /* 색감을 살짝 밝게 조정 */
+  margin: 0 auto; /* 가운데 정렬 */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* 부드러운 그림자 추가 */
+}
+
+.test {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#registration-wrapper {
+  width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+}
+
+#registration-wrapper .welcome-message {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(72, 72, 72);
+}
+
+#registration-wrapper form {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 그림자 강화 */
+  padding: 30px;
+  max-width: 800px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+#registration-wrapper div {
+  margin-bottom: 25px; /* 간격 조정 */
+  font-size: 16px;
+  font-family: 'Pretendard-Regular';
+  color: rgb(92, 91, 91);
+}
+
+#registration-wrapper h2 {
+  text-align: center;
+  color: #444;
+  margin-bottom: 30px;
+  font-size: 32px;
+  font-weight: bold;
+  font-family: 'Pretendard-Bold'; /* Bold 스타일 추가 */
+}
+
+#registration-wrapper label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  font-family: 'Pretendard-Regular';
+  color: #444;
+
+}
+
+#registration-wrapper input[type="text"],
+#registration-wrapper input[type="number"],
+#registration-wrapper textarea {
+  width: 96.5%;
+  margin-top: 5px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Pretendard-Regular';
+  color: #444;
+}
+
+#registration-wrapper input[type="file"] {
+  /* margin-top: 12px; */
+}
+
+#registration-wrapper textarea {
+  resize: vertical;
+  height: 120px; /* 기본 높이 증가 */
+}
+
+#registration-wrapper button {
+  width: 100%;
+  background-color: #ff94a0;
+  border: solid 2px rgba(240, 203, 203, 0.637);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-family: 'Pretendard-Regular';
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#registration-wrapper button:hover {
+  background-color: #ff7f8e;
+}
+
+#registration-wrapper .representative-image-button,
+#registration-wrapper .address-search-button,
+#registration-wrapper .approval-button,
+#registration-wrapper .rejection-button {
+  margin-top: 10px;
+  margin-right: 10px; /* 간격 추가 */
+  padding: 12px 15px;
+  font-size: 15px;
+}
+
+#registration-wrapper .representative-image-button {
+  background-color: #5CC3D6;
+}
+
+#registration-wrapper .address-search-button {
+  background-color: #ff94a0;
+}
+
+#registration-wrapper .address-search-button:hover {
+  background-color: #ff7f8e;
+}
+
+#registration-wrapper .approval-button {
+  background-color: #8FDC8A;
+}
+
+#registration-wrapper .rejection-button {
+  background-color: #8A63DC;
+}
+
+#registration-wrapper .delete-image-button {
+  width: 60px;
+  height: 30px;
+  font-size: 20px;
+  text-align: center;
+  background-color: #7C4FB9;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.small-title {
+  font-size: 16px;
+
+}
+
+.type-box {
+  gap: 34px;
+  display: flex;
+}
+
+.type-box-title {
+  margin-right: 5px;
+}
+
+.filter-box {
+  display: flex;
+  gap: 34px;
+}
+
+.erollment-button-box {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  height: 50px;
+}
+
+.erollment-cancel-btn {
+
+}
+
+/* @media (max-width: 800px) {
+    #registration-wrapper form {
+        padding: 15px;
+    }
+  
+    input[type="text"],
+    input[type="number"],
+    textarea,
+    button {
+        font-size: 14px;
+    }
+  }  */

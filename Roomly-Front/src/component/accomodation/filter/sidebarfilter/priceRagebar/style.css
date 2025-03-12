@@ -1,0 +1,45 @@
+.range-container {
+  display: flex;
+  width: 200px;
+  position: relative;
+}
+
+.range-bar-left,
+.range-bar-right {
+  height: 10px;
+  width: 90px;
+  -webkit-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  border-radius: 10px;
+  background: transparent;
+}
+
+.range-bar-left {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.range-bar-right {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  margin-left: -2px;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 10px;
+  background: transparent;
+  border-radius: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 13px;
+  height: 13px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -1px;
+}

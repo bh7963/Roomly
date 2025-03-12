@@ -1,0 +1,270 @@
+#accommodation-search-list {
+  width: 800px;
+  color: #384C60;
+
+}
+
+#accommodation-search-list .accommodation-cards-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+#accommodation-search-list .accommodation-cards{
+  width: 700px;
+  height: 180px;
+  display: flex;
+  background-color: #ffff;
+  border-radius: 3px;
+  align-items: center;
+  gap: 20px;
+  border: solid 1.5px #D4D4D4;
+}
+
+/* 상세보기 버튼 */
+#accommodation-search-list .show-detail-btn {
+
+  background-color: #00accf;
+  font-size: 11px;
+
+  margin-top: 10px;
+  
+  width: 60px;
+  height: 25px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+#accommodation-search-list .show-detail-btn:hover {
+  color: #D9D9D9;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.page-btn {
+  padding: 10px;
+  margin: 0 5px;
+  background-color: #f0f0f0;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.page-btn.active {
+  background-color: #00accf;
+  color: white;
+}
+
+.page-btn:hover {
+  background-color: #00accf;
+  color: white;
+}
+
+/* 리스트 헤더 정렬 스타일 */
+#accommodation-search-list .list-header {
+  padding: 10px 0;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+/* 검색 결과 텍스트 스타일 */
+#accommodation-search-list .search-length-result{
+  font-size: 15px;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px #9DA0A5;
+  margin-left: 25px;
+}
+
+/* 분류 스타일 */
+
+.sort-dropdown {
+  display: flex;
+  align-items: center;
+  margin-right: 1%;
+}
+
+.sort-dropdown label {
+  margin-right: 10px;
+}
+
+#sortOptions {
+  padding: 5px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #ffe9e9;
+  cursor: pointer;
+}
+
+/* 숙소 사진 이미지 사이즈 */ 
+#accommodation-search-list .image-wrapper {
+  width: 300px;
+  height: 180px;
+  border-radius: 10px;
+  background-color: #D9D9D9;
+}
+
+#accommodation-search-list .accommodation-image {
+  width: 100%;
+  height: 100%;
+  
+}
+
+/* 이미지 위에 북마크 아이콘 추가 */
+#accommodation-search-list .bookmark {
+  position: absolute;
+  top: 0px;
+  right: 50px;
+  font-size: 1.5rem;
+  color: #ccc;
+  cursor: pointer;
+}
+
+#accommodation-search-list .bookmark.active {
+  color: red;
+}
+
+/* 숙소 카드 속 정보 부분 */
+#accommodation-info{
+width: 450px;
+display: flex;
+flex-direction: column;
+padding: 20px;
+
+}
+
+#accommodation-info .type-area-container{
+display: flex;
+margin-top: 10px;
+}
+
+#accommodation-info .type,
+#accommodation-info .category-area,
+#accommodation-info .divider-bar-type-area{
+  font-size: 11px;
+  color: #9DA0A5;
+
+}
+
+#accommodation-info .divider-bar-type-area{
+margin: 0px 7px;
+}
+
+#accommodation-info .name{
+  font-size: 20px;
+  font-weight: 700;
+  color: #384C60;
+
+}
+
+.fake-stars{
+  font-size: 12px
+}
+
+#accommodation-info .category-facilities{
+  margin-top: 18px;
+  color: #9DA0A5;
+  font-size: 12px;
+  font-weight: 600;
+
+}
+
+#accommodation-info .dot-separator {
+  margin: 0 4px;
+  color: #ccc; 
+}
+
+#accommodation-info .address-box{
+  margin-top: 15px;
+
+  display: flex;
+  color: #9DA0A5;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+#accommodation-info .map-icon{
+  background-image: url(../../../../public/images/accommodationlist/Location.png);
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#accommodation-info .address{
+  margin-left: 10px;
+}
+
+#accommodation-search-list .divider-bar{
+  width: 5px;
+  height: 120px;
+  background-image: url(../../../../public/images/accommodationlist/Line130.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#accommodation-search-list .accommodation-price-container{
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  padding: 25px 20px 20px 0;
+  justify-content: center;
+  align-items: center;
+}
+
+#accommodation-search-list .price-box{
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+#accommodation-search-list .min-price{
+  color: #384C60;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+#accommodation-search-list .won{
+  color: #384C60;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#accommodation-search-list .per-one-day{
+  color: #9DA0A5;
+  margin-top: 4px;
+  font-size: 9px;
+}
+
+#accommodation-search-list .rating-box{
+  display: flex;
+}
+
+#accommodation-search-list .rating{
+  color: #AB4806;
+  margin-top: px;
+  font-size: 37px;
+  font-weight: 600;
+}
+
+#accommodation-search-list .rating-per-score{
+  color: #9DA0A5;
+  font-size: 13px;
+  margin-top: 26px;
+}
+
+#accommodation-search-list .review{
+  color: #00accf;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
