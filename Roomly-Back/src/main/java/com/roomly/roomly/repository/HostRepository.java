@@ -20,7 +20,6 @@ public interface HostRepository extends JpaRepository<HostEntity, String> {
     boolean existsByHostIdAndHostPw(String hostId, String changePassword);
 
     boolean existsByHostNameAndHostTelNumber(String hostName, String hostTelNumber);
-    boolean existsByBusinessImage(String businessImage);
     
 
     @Query(value=

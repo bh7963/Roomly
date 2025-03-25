@@ -199,26 +199,26 @@ public class HostServiceImplement implements HostService {
     @Override
     public ResponseEntity<? super HostIdFindSuccessResponseDto> telAuthCheck(TelAuthCheckRequestDto dto) {
 
-        String telNumber = dto.getGuestTelNumber();
-        String authNumber = dto.getGuestAuthNumber();
-        HostEntity hostEntity = null;
+        String telNumber = dto.getTelNumber();
+        String authNumber = dto.getAuthNumber();
+        String userId;
 
         try {
 
-            TelAuthNumberEntity telAuthNumberEntity = telAuthNumberRepository.findByTelNumberAndAuthNumber(telNumber,
-                    authNumber);
+            TelAuthNumberEntity telAuthNumberEntity = telAuthNumberRepository.findByTelNumberAndAuthNumber(telNumber,authNumber);
             if (telAuthNumberEntity == null)
                 return ResponseDto.telAuthFail();
 
-            hostEntity = hostRepository.findByHostTelNumber(telNumber);
-            if (hostEntity == null)
+                HostEntity hostEntity = hostRepository.findByHostTelNumber(telNumber);
+                userId = hostEntity.getHostId();
+            if (userId == null)
                 return ResponseDto.noExistUserId();
 
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseDto.databaseError();
         }
-        return HostIdFindSuccessResponseDto.success(hostEntity);
+        return HostIdFindSuccessResponseDto.success(userId);
     }
 
     // 비밀번호 변경(로그아웃)

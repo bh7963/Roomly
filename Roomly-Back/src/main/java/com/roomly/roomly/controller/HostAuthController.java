@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.roomly.roomly.dto.request.host.HostIdFindRequestDto;
 import com.roomly.roomly.dto.request.host.HostPwFindRequestDto;
 import com.roomly.roomly.dto.request.host.TelAuthCheckRequestDto;
-import com.roomly.roomly.dto.request.hostauth.HostBusinessImageRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostBusinessNumberRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostIdCheckRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostSignInRequestDto;
@@ -70,14 +69,7 @@ public class HostAuthController {
         return responseBody;
     }
 
-    // 호스트 사업자 이미지 중복확인 api
-    @PostMapping("/business-image")
-    public ResponseEntity<ResponseDto> hostBusinessImage(
-        @RequestBody @Valid HostBusinessImageRequestDto requestBody
-    ){
-        ResponseEntity<ResponseDto> responseBody = authService.hostBusinessImage(requestBody);
-        return responseBody;
-    }
+    
 
     // 호스트 회원가입 api
     @PostMapping("/sign-up") 

@@ -21,7 +21,6 @@ public class GetHostSignInResponseDto extends ResponseDto{
     private String hostTelNumber;
     private String businessName;
     private String businessStartDay;
-    private String businessImage;
     private boolean entryStatus;
 
 
@@ -34,7 +33,6 @@ public class GetHostSignInResponseDto extends ResponseDto{
         this.hostTelNumber = hostEntity.getHostTelNumber();
         this.businessName = hostEntity.getBusinessName();
         this.businessStartDay = hostEntity.getBusinessStartDay();
-        this.businessImage = hostEntity.getBusinessImage();
         this.entryStatus = hostEntity.getEntryStatus();
     }
 

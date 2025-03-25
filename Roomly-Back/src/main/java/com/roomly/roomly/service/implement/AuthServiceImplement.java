@@ -9,10 +9,8 @@ import com.roomly.roomly.common.util.AuthNumberCreater;
 import com.roomly.roomly.dto.request.guestauth.GuestIdCheckRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestSignInRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestSignUpRequestDto;
-import com.roomly.roomly.dto.request.guestauth.GuestTelAuthCheckRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestTelAuthRequestDto;
 import com.roomly.roomly.dto.request.host.TelAuthCheckRequestDto;
-import com.roomly.roomly.dto.request.hostauth.HostBusinessImageRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostBusinessNumberRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostIdCheckRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostSignInRequestDto;
@@ -130,20 +128,6 @@ public class AuthServiceImplement implements AuthService {
         }
         return ResponseDto.success();
     }
-    // 사업자 파일 중복확인 메서드
-    @Override
-    public ResponseEntity<ResponseDto> hostBusinessImage(HostBusinessImageRequestDto dto) {
-        try {
-            String businessImage = dto.getBusinessImage();
-            boolean isExist = hostRepository.existsByBusinessImage(businessImage);
-            if (isExist) return ResponseDto.duplicatedImage(); 
-
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResponseDto.databaseError();
-        }
-        return ResponseDto.success();
-    }
 
     // 호스트 회원가입 메서드
     @Override
@@ -154,7 +138,6 @@ public class AuthServiceImplement implements AuthService {
         String hostTelNumber = dto.getHostTelNumber();
         String hostAuthNumber = dto.getHostAuthNumber();
         String hostBusinessNumber = dto.getHostBusinessNumber();
-        String businessImage = dto.getBusinessImage();
 
         try {
 
@@ -169,9 +152,6 @@ public class AuthServiceImplement implements AuthService {
 
             boolean isMatchedHostBusinessNumber = hostRepository.existsByHostBusinessNumber(hostBusinessNumber);
             if (isMatchedHostBusinessNumber) return ResponseDto.duplicatedBusinessNumber();
-
-            boolean isExist = hostRepository.existsByBusinessImage(businessImage);
-            if (isExist) return ResponseDto.duplicatedImage();
 
             String encodedPassword = passwordEncoder.encode(hostPw);
             dto.setHostPw(encodedPassword);

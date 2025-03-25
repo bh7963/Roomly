@@ -5,10 +5,8 @@ import org.springframework.http.ResponseEntity;
 import com.roomly.roomly.dto.request.guestauth.GuestIdCheckRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestSignInRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestSignUpRequestDto;
-import com.roomly.roomly.dto.request.guestauth.GuestTelAuthCheckRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestTelAuthRequestDto;
 import com.roomly.roomly.dto.request.host.TelAuthCheckRequestDto;
-import com.roomly.roomly.dto.request.hostauth.HostBusinessImageRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostBusinessNumberRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostIdCheckRequestDto;
 import com.roomly.roomly.dto.request.hostauth.HostSignInRequestDto;
@@ -30,8 +28,6 @@ public interface AuthService {
     ResponseEntity<ResponseDto> hostTelAuthCheck(HostTelAuthCheckRequestDto dto);
     // 사업자 번호 중복확인
     ResponseEntity<ResponseDto> hostBusinessNumber(HostBusinessNumberRequestDto dto);
-    // 사업자 이미지 전송
-    ResponseEntity<ResponseDto> hostBusinessImage(HostBusinessImageRequestDto dto);
     // 호스트 회원가입
     ResponseEntity<ResponseDto> hostSignUp(HostSignUpRequestDto dto);
     // 호스트 로그인

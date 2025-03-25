@@ -26,7 +26,7 @@ public interface AccommodationService {
     // Accommodation Sub Images 보기
     ResponseEntity<? super GetAccommodationImagesResponseDto> getAccommodationImages(String accommodationName);
     // Accommodation 리스트 보기
-    ResponseEntity<? super GetAccommodationListResponseDto> getAccommodationList();
+    ResponseEntity<? super GetAccommodationListResponseDto> getAccommodationList(String categoryArea);
     // Accommodation 삭제 
     ResponseEntity<ResponseDto> deleteAccommodation(String accommodationName);
 }

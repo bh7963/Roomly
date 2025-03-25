@@ -255,12 +255,16 @@ public class AccommodationServiceImplement implements AccommodationService {
 
     // 숙소 리스트(메인 검색 페이지에서 사용될) 조회 메서드
     @Override
-    public ResponseEntity<? super GetAccommodationListResponseDto> getAccommodationList() {
+    public ResponseEntity<? super GetAccommodationListResponseDto> getAccommodationList(String categoryArea) {
         
         List<GetAccommodationListResultSet> resultSets = new ArrayList<>();
 
         try {
-            resultSets = accommodationRepository.getList();
+            resultSets = accommodationRepository.getList(categoryArea);
+            
+            if (resultSets == null) {
+                return GetAccommodationListResponseDto.success(new ArrayList<>());
+            } 
             
         } catch (Exception e) {
             e.printStackTrace();

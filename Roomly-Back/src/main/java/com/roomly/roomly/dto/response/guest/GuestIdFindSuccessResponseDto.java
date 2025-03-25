@@ -14,11 +14,11 @@ import lombok.Getter;
 public class GuestIdFindSuccessResponseDto extends ResponseDto{
     
 
-    private String guestId;
+    private String userId;
 
     public GuestIdFindSuccessResponseDto(GuestEntity guestEntity){
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
-        this.guestId = guestEntity.getGuestId();
+        this.userId = guestEntity.getGuestId();
     }
 
     public static ResponseEntity<GuestIdFindSuccessResponseDto> success(GuestEntity guestEntity){

@@ -48,10 +48,11 @@ public interface AccommodationRepository extends JpaRepository<AccommodationEnti
     "LEFT JOIN room R ON A.accommodation_name = R.accommodation_name " +
     "LEFT JOIN reservation RS ON R.room_id = RS.room_id " +
     "LEFT JOIN review RV ON RS.reservation_id = RV.reservation_id " +
+    "WHERE A.category_area=:categoryArea "+
     "GROUP BY A.accommodation_name " ,
     nativeQuery = true
     )
-    List<GetAccommodationListResultSet> getList();
+    List<GetAccommodationListResultSet> getList(@Param("categoryArea") String categoryArea);
 
     @Query(value = 
     "SELECT" +

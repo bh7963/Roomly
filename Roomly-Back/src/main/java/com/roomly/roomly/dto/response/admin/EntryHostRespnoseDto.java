@@ -18,7 +18,6 @@ public class EntryHostRespnoseDto extends ResponseDto {
     private String businessName;
     private String hostBusinessNumber;
     private String businessStartDay;
-    private String businessImage;
 
     public EntryHostRespnoseDto(HostEntity hostEntity){
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
@@ -29,7 +28,6 @@ public class EntryHostRespnoseDto extends ResponseDto {
         this.businessName = hostEntity.getBusinessName();
         this.hostBusinessNumber = hostEntity.getHostBusinessNumber();
         this.businessStartDay = hostEntity.getBusinessStartDay();
-        this.businessImage = hostEntity.getBusinessImage();
     }
 
     public static ResponseEntity<EntryHostRespnoseDto> success(HostEntity hostEntity){

@@ -29,7 +29,7 @@ public class HostEntity {
     private String hostTelNumber;
     private String businessName;
     private String businessStartDay;
-    private String businessImage;
+    private String businessType;
     private Boolean entryStatus;
 
     public HostEntity(HostSignUpRequestDto dto){
@@ -40,7 +40,7 @@ public class HostEntity {
         this.hostBusinessNumber = dto.getHostBusinessNumber();
         this.businessName = dto.getBusinessName();
         this.businessStartDay = dto.getBusinessStartDay();
-        this.businessImage = dto.getBusinessImage();
+        this.businessType = dto.getBusinessType();
         this.entryStatus = dto.isEntryStatus();
     }
 

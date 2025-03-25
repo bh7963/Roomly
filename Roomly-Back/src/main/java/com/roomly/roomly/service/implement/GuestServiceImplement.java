@@ -164,8 +164,8 @@ public class GuestServiceImplement implements GuestService {
     @Override
     // 전화번호 및 인증번호 확인
     public ResponseEntity<? super GuestIdFindSuccessResponseDto> guestTelAuthCheck(TelAuthCheckRequestDto dto) {
-        String telNumber = dto.getGuestTelNumber();
-        String authNumber = dto.getGuestAuthNumber();
+        String telNumber = dto.getTelNumber();
+        String authNumber = dto.getAuthNumber();
         GuestEntity guestEntity = null;
 
         try {

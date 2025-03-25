@@ -34,7 +34,7 @@ public class HostSignUpRequestDto {
     @NotBlank
     private String businessStartDay;
     @NotBlank
-    private String businessImage;
+    private String businessType;
     private boolean entryStatus;
 
 

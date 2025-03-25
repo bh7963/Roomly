@@ -2,7 +2,6 @@ package com.roomly.roomly.dto.request.payment;
 
 
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Pattern;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -15,10 +14,8 @@ public class PaymentSuccessRequestDto{
     
     private Long totalPrice; // 결제가격(숙박일수*객실1박가격)
     @NotBlank
-    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$")
     private String checkInDate; // 체크인날짜
     @NotBlank
-    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$")
     private String checkOutDate; // 체크아웃날짜
     private Integer reservationTotalPeople; // 예약 총 인원
     @NotBlank

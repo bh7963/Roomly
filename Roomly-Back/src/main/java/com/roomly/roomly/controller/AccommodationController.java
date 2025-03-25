@@ -91,9 +91,11 @@ public class AccommodationController {
     }
 
     // 숙소 리스트(게스트가 확인할 수 있는) 조회
-    @GetMapping("/list")
-    public ResponseEntity<? super GetAccommodationListResponseDto> getAccommodationList(){
-        ResponseEntity<? super GetAccommodationListResponseDto> responseBody = accommodationService.getAccommodationList();
+    @GetMapping("/list/{categoryType}")
+    public ResponseEntity<? super GetAccommodationListResponseDto> getAccommodationList(
+        @PathVariable("categoryType") String categoryType
+    ){
+        ResponseEntity<? super GetAccommodationListResponseDto> responseBody = accommodationService.getAccommodationList(categoryType);
         return responseBody;
     }
     
