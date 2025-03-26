@@ -13,6 +13,7 @@ public class HostIdFindRequestDto {
     
     @NotBlank
     private String hostName;
+    
     @NotBlank
     @Pattern(regexp = "^[0-9]{11}$")
     private String hostTelNumber;

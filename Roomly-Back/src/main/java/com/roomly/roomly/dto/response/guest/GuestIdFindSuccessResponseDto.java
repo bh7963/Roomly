@@ -6,7 +6,6 @@ import org.springframework.http.ResponseEntity;
 import com.roomly.roomly.dto.response.ResponseCode;
 import com.roomly.roomly.dto.response.ResponseDto;
 import com.roomly.roomly.dto.response.ResponseMessage;
-import com.roomly.roomly.entity.GuestEntity;
 
 import lombok.Getter;
 
@@ -16,13 +15,13 @@ public class GuestIdFindSuccessResponseDto extends ResponseDto{
 
     private String userId;
 
-    public GuestIdFindSuccessResponseDto(GuestEntity guestEntity){
+    public GuestIdFindSuccessResponseDto(String userId){
         super(ResponseCode.SUCCESS, ResponseMessage.SUCCESS);
-        this.userId = guestEntity.getGuestId();
+        this.userId = userId;
     }
 
-    public static ResponseEntity<GuestIdFindSuccessResponseDto> success(GuestEntity guestEntity){
-        GuestIdFindSuccessResponseDto responseBody = new GuestIdFindSuccessResponseDto(guestEntity);
+    public static ResponseEntity<GuestIdFindSuccessResponseDto> success(String userId){
+        GuestIdFindSuccessResponseDto responseBody = new GuestIdFindSuccessResponseDto(userId);
         return ResponseEntity.status(HttpStatus.OK).body(responseBody);
     }
 }

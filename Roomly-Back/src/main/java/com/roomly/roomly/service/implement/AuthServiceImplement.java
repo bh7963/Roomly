@@ -252,8 +252,8 @@ public class AuthServiceImplement implements AuthService {
     // 인증번호 확인 메서드
     public ResponseEntity<ResponseDto> guestTelAuthCheck(TelAuthCheckRequestDto dto) {
         
-        String telNumber = dto.getGuestTelNumber();
-        String authNumber = dto.getGuestAuthNumber();
+        String telNumber = dto.getTelNumber();
+        String authNumber = dto.getAuthNumber();
 
         try {
             boolean isMatched = telAuthNumberRepository.existsByTelNumberAndAuthNumber(telNumber, authNumber);

@@ -1,10 +1,4 @@
 // variable: 상대 경로 상수 //
-
-import axios, { AxiosResponse } from "axios";
-import GetGuestSignInResponseDto from "src/apis/login/dto/response/get-guest-sign-in.response.dto";
-import GetSignInResponseDto from "src/apis/login/dto/response/get-guest-sign-in.response.dto";
-import { ResponseDto } from "src/apis/signUp/dto/response";
-
 export const ROOT_PATH = "/";
 
 export const MAIN_PATH = "/main"
@@ -12,7 +6,8 @@ export const AUTH_PATH = "/sign-up"
 export const PAYMENT_PATH = "/payment";
 export const FINDID_PATH = "/find";
 export const MODAL3 = "/payment";
-export const HOST_MYPAGE_PATH = (hostId:string)=> `/mypage-host/${hostId}`
+export const HOST_MYPAGE_PATH =  `/mypage-host/`
+export const GUEST_MYPAGE_PATH = (guestId:string) => `/mypage-guest/${guestId}`
 
 export const ACCOMMODATION_LIST_PATH = "/accommodationlist";
 export const ACCOMMODATION_LIST_DETAIL_PATH = (accommodationName:string)=>`/accommodationlist/detail/${accommodationName}`;
@@ -33,9 +28,9 @@ export const GET_GUEST_INFO_LIST_API_URL = `${ADMIN_MODULE_URL}/guest-info/list`
 // 관리자-호스트 정보 리스트
 export const GET_HOST_INFO_LIST_API_URL = `${ADMIN_MODULE_URL}/host-info/list`; 
 // 관리자-호스트 정보 상세보기(어드민이 회원가입시 확인할때 사용)
-export const GET_HOST_INFO_API_URL = (hostId:string)=>`${ADMIN_MODULE_URL}/info/detail/${hostId}`;
+export const GET_HOST_INFO_API_URL = `${ADMIN_MODULE_URL}/info/detail/`;
 // 관리자-호스트 계정 승인상태 변경
-export const PATCH_HOST_STATUS_API_URL = (hostId:string)=>`${ADMIN_MODULE_URL}/update/status/${hostId}`;
+export const PATCH_HOST_STATUS_API_URL = `${ADMIN_MODULE_URL}/update/status/`;
 // 숙소 리스트(숙소 승인 상태에 따라)
 export const GET_ACCOMMODATION_STATUS_LIST_API_URL = `${ADMIN_MODULE_URL}/accommodation-list`;
 // 숙소 승인 상태 변경
@@ -77,19 +72,19 @@ export const GUEST_ID_FIND_TEL_AUTH_CHECK_API_URL = `${GUEST_AUTH_MODULE_URL}/id
 export const HOST_MODULE_URL = `${ROOMLY_API_DOMAIN}/api/roomly/host`;
 
 // 호스트 정보 상세보기
-export const HOST_DETAIL_API_URL = (hostId:string)=>`${HOST_MODULE_URL}/info/${hostId}`;
+export const HOST_DETAIL_API_URL = `${HOST_MODULE_URL}/info`;
 // 호스트 패스워드 변경
-export const PATCH_HOST_PASSWORD_API_URL = (hostId:string)=>`${HOST_MODULE_URL}/update-password/${hostId}`;
-// 호스트 전화번호 변경및 삭제
-export const PATCH_HOST_TEL_NUMBER_API_URL = (hostId:string)=>`${HOST_MODULE_URL}/update-tel-number/${hostId}`;
+export const PATCH_HOST_PASSWORD_API_URL = `${HOST_MODULE_URL}/update-password`;
+// 호스트 전화번호 변경
+export const PATCH_HOST_TEL_NUMBER_API_URL = `${HOST_MODULE_URL}/update-tel-number`;
 // 호스트 아이디별 숙소 리스트
-export const HOST_ACCOMMODATION_LIST_API_URL = (hostId:string)=>`${HOST_MODULE_URL}/list/${hostId}`;
+export const HOST_ACCOMMODATION_LIST_API_URL = `${HOST_MODULE_URL}/list`;
 // 호스트 숙소별 예약 리스트
-export const HOST_RESERVATION_LIST_API_URL = (hostId:string)=>`${HOST_MODULE_URL}/reservation/${hostId}`;
+export const HOST_RESERVATION_LIST_API_URL = `${HOST_MODULE_URL}/reservation`;
 // 호스트 아이디 찾기
-export const HOST_ID_FIND_API_URL = (hostId:string)=>`${HOST_MODULE_URL}/id-find`;
+export const HOST_ID_FIND_API_URL = `${HOST_AUTH_MODULE_URL}/id-find`;
 // 호스트 아이디 찾기에 사용된 전화번호 인증번호 확인
-export const HOST_ID_FIND_TEL_AUTH_CHECK_API_URL = `${HOST_MODULE_URL}/tel-auth-check`;
+export const HOST_ID_FIND_TEL_AUTH_CHECK_API_URL = `${HOST_AUTH_MODULE_URL}/id-find-tel-auth-check`;
 // 호스트 비밀번호 변경(로그인상태 x)
 export const PATCH_HOST_PASSWORD_FIND_API_URL = `${HOST_MODULE_URL}/pw-find`;
 // 호스트 로그인 정보 불러오기
@@ -124,11 +119,11 @@ export const PATCH_ACCOMMODATION_SUB_IMAGE_API_URL = (accommodationName: string,
 // 숙소 이미지들 상세보기
 export const GET_ACCOMMODATION_IMAGE_API_URL = (accommodationImage:string) => `${ACCOMMODATION_MODULE_URL}/image/${accommodationImage}`;
 // 숙소 리스트(게스트가 확인하는 리스트)
-export const GET_ACCOMMODATION_LIST_API_URL = `${ACCOMMODATION_MODULE_URL}/list`;
+export const GET_ACCOMMODATION_LIST_API_URL = (categoryArea: string) => `${ACCOMMODATION_MODULE_URL}/list/${categoryArea}`;
 // 숙소 삭제 
 export const DELETE_ACCOMMODATION_API_URL = (accommodationName:string) =>`${ACCOMMODATION_MODULE_URL}/delete/${accommodationName}`
 // 호스트가 등록한 숙소 리스트 조회
-export const GET_HOST_ACCOMMODATION_LIST_API_URL = (hostId: string) => `${ACCOMMODATION_MODULE_URL}/${hostId}`;
+export const GET_HOST_ACCOMMODATION_LIST_API_URL = (hostId: string) => `${ACCOMMODATION_MODULE_URL}/`;
 // 메인페이지에서 넘어가는 숙소 상세보기
 export const GET_ACCOMMODATION_DETAIL_API_URL = (accommodationName:string, checkInDay:string, checkOutDay:string) =>`${ACCOMMODATION_MODULE_URL}/${accommodationName}/${checkInDay}/${checkOutDay}`
 
@@ -177,7 +172,7 @@ export const POST_RESERVATION_API_URL = `${RESERVATION_MODULE_URL}/createReserva
 export const GET_RESERVATION_LIST_API_URL = (guestId:string)=> `${RESERVATION_MODULE_URL}/reservation-status/${guestId}`;
 
 // 호스트 예약 현황 리스트
-export const GET_RESERVATION_STATUS_LIST_API_URL = (hostId: string) => `${RESERVATION_MODULE_URL}/host-reservation-status/${hostId}`;
+export const GET_RESERVATION_STATUS_LIST_API_URL = `${RESERVATION_MODULE_URL}/host-reservation-status`;
 
 // variable: 리뷰 모듈
 export const REVIEW_MODULE_URL = `${ROOMLY_API_DOMAIN}/api/roomly/reviews`

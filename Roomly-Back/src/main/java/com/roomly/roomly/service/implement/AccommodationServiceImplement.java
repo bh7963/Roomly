@@ -51,24 +51,27 @@ public class AccommodationServiceImplement implements AccommodationService {
     @Override
     public ResponseEntity<ResponseDto> postAccommodation(ResgistAccomodation resgistAccomodation) {
         
-        String accommodationName = resgistAccomodation.getAccommodationReqeustDto().getAccommodationName();
+        
 
         try {
-
+            
             // 승인받은 계정여부확인
-            String host = resgistAccomodation.getAccommodationReqeustDto().getHostId();
+            String host = resgistAccomodation.getAccommodation().getHostId();
             HostEntity hostEntity = hostRepository.findByHostId(host);
+            System.out.println(host);
             if (hostEntity == null) return ResponseDto.noExistUserId();
             boolean hostStatus = hostEntity.getEntryStatus();
             if (!hostStatus) return ResponseDto.noPermission();
 
             // 숙소 등록
+            String accommodationName = resgistAccomodation.getAccommodation().getAccommodationName();
+
             boolean isExistedAccommodation = accommodationRepository.existsByAccommodationName(accommodationName);
             if (isExistedAccommodation) return ResponseDto.duplicatedAccommodationName();
-            String accommdationMainImage = resgistAccomodation.getAccommodationReqeustDto().getAccommodationMainImage();
+            String accommdationMainImage = resgistAccomodation.getAccommodation().getAccommodationMainImage();
             boolean isExistedAccommodationMainImage = accommodationRepository.existsByAccommodationMainImage(accommdationMainImage);
             if (isExistedAccommodationMainImage) return ResponseDto.duplicatedImage();
-            AccommodationEntity accommodationEntity = new AccommodationEntity(resgistAccomodation.getAccommodationReqeustDto());
+            AccommodationEntity accommodationEntity = new AccommodationEntity(resgistAccomodation.getAccommodation());
             accommodationRepository.save(accommodationEntity);
 
             // 숙소 서브 이미지 등록
@@ -91,7 +94,7 @@ public class AccommodationServiceImplement implements AccommodationService {
             }
 
             // 객실 등록
-            List<PostRoomRequestDto> roomRequestDtos = resgistAccomodation.getRoomRequestDtoList(); 
+            List<PostRoomRequestDto> roomRequestDtos = resgistAccomodation.getRooms(); 
                                                                                                     
             for (PostRoomRequestDto roomRequestDto : roomRequestDtos) {
                 String roomName = roomRequestDto.getRoomName();

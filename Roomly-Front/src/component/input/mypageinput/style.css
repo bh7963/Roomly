@@ -87,7 +87,7 @@
 
 /* 버튼창 css */
 
-.mypageinformation-telnumber-change-button-active {
+.mypageinformation-telnumber-change-button.active {
     cursor: pointer;
     flex-shrink: 0;
     padding: 10px 20px;
@@ -103,7 +103,7 @@
     margin-bottom: 10px;
 }
 
-.mypageinformation-telnumber-change-button-disable {
+.mypageinformation-telnumber-change-button.disable {
     flex-shrink: 0;
     padding: 10px 20px;
     background-color:rgba(131, 130, 130, 0.8);

@@ -1,7 +1,6 @@
-import ReservationStatusList from "src/types/accommodation/reservationstatus-list.interface";
-import ResponseDto from "./response.dto";
+import { ResponseDto } from "src/apis/guestmypage";
+import ReservationList from "src/types/accommodation/reservationstatus-list.interface";
 
-
-export interface GetReservationStatusListResponseDto extends ResponseDto{
-  reservationStatusList: ReservationStatusList[];
+export default interface GetReservationStatusListResponseDto extends ResponseDto{
+  reservationList: ReservationList[];
 }

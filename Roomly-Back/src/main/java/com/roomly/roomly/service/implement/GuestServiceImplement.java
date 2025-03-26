@@ -166,24 +166,23 @@ public class GuestServiceImplement implements GuestService {
     public ResponseEntity<? super GuestIdFindSuccessResponseDto> guestTelAuthCheck(TelAuthCheckRequestDto dto) {
         String telNumber = dto.getTelNumber();
         String authNumber = dto.getAuthNumber();
-        GuestEntity guestEntity = null;
-
+        String userId;
         try {
 
-            TelAuthNumberEntity telAuthNumberEntity = telAuthNumberRepository.findByTelNumberAndAuthNumber(telNumber,
-                    authNumber);
+            TelAuthNumberEntity telAuthNumberEntity = telAuthNumberRepository.findByTelNumberAndAuthNumber(telNumber,authNumber);
             if (telAuthNumberEntity == null)
                 return ResponseDto.telAuthFail();
 
-            guestEntity = guestRepository.findByGuestTelNumber(telNumber);
-            if (guestEntity == null)
-                return ResponseDto.noExistTelNumber();
+            GuestEntity guestEntity = guestRepository.findByGuestTelNumber(telNumber);
+            userId = guestEntity.getGuestId();
+            if (userId == null)
+                return ResponseDto.noExistUserId();
 
         } catch (Exception e) {
             e.printStackTrace();
             return ResponseDto.databaseError();
         }
-        return GuestIdFindSuccessResponseDto.success(guestEntity);
+        return GuestIdFindSuccessResponseDto.success(userId);
     }
 
     @Override

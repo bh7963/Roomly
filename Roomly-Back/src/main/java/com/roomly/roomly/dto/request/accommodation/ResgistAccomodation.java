@@ -17,12 +17,12 @@ import lombok.Setter;
 public class ResgistAccomodation {
 
 
-    private PostAccommodationReqeustDto accommodationReqeustDto;
+    private PostAccommodationReqeustDto accommodation;
 
     private List<String> accommodationImages; // 숙소 서브 이미지
 
     private List<PostUseInformationRequestDto> useInformations;
 
-    private List<PostRoomRequestDto> roomRequestDtoList;
+    private List<PostRoomRequestDto> rooms;
     
 }

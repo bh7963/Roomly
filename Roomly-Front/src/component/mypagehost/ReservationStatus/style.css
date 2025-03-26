@@ -70,3 +70,127 @@
     padding: 20px;
     background-color: #f9f9f9;
 }
+
+:root {
+    --main-button-color: rgba(0,172,207,1);
+    --main-button-text-color: rgba(255,255,255,1);
+
+    --input-solid-color: rgba(188,188,188,1);
+    --input-text-color: rgba(201,201,201,1);
+    --mypage-text-color: rgb(92, 91, 91);
+
+    
+    --diable-button-color: rgba(157,160,165,1);
+    --error-color: rgba(255, 84, 64, 1);
+    --dark-gray-title-color: rgba(56,76,96,1);
+
+    --default-color: rgba(35, 45, 66, 1);
+}
+
+/* 페이지 css */
+#reservationstatus2-warpper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 5px 0px;
+
+    width: 700px;  
+    height: auto;  
+    border: solid 6px rgba(247, 219, 219, 0.637);
+
+    font-size: 15px;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+    border-radius: 5px;
+}
+
+.reservationstatus2-box {
+    margin: 5px;
+}
+
+.reservationstatus2-list-top-deatail {
+    display: flex;
+    justify-content: space-between;
+
+    width: 690px;
+
+    font-size: 15px;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+}
+
+.reservationstatus2-list-main-detail {
+    display: flex;
+}
+
+.reservationstatus2-list-image {
+    width: 160px;
+    height: 150px;
+
+    border-radius: 15px;
+    margin: 5px;
+}
+
+.reservationstatus2-hotel-detail {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    width: 150px;
+
+    margin: 10px 15px;
+
+    font-size: 15px;
+    color: rgb(75, 74, 74);
+    font-family: 'Pretendard-Regular';
+}
+
+.reservationstatus2-hotel-title{ 
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reservationstatus2-hotel-room{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.reservationstatus2-detail-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 10px 15px;
+
+}
+
+.reservationstatus2-count-reviewbox {
+    display: flex;
+    justify-content: space-between;
+    width: 320px;
+}
+
+.reservationstatus2-reviewbox {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100px;
+    height: 100%;    
+    background-color: #ff94a0;
+    border: solid 2px rgba(240, 203, 203, 0.637);;
+    border-radius: 5px;
+
+    font-weight: 700;
+    font-size: 18px;
+    color: rgb(255 , 255, 255, 1);
+}
+
+.reservationstatus2-guestinfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}

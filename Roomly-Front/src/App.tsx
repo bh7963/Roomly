@@ -15,21 +15,13 @@ import SignUp from './views/auth';
 import DetailList from './component/accomodation/detaillist';
 
 import FAQ from './views/faq';
-import HostAccommodationRegister from './component/mypagehost/MyAccommodationManagement/registration';
-
-
-import BookingList from './component/mypageguest/bookinglist';
-
 import HostEnrollmentapproval from './views/admin/hostenrollmentapproval/index';
 import FindId from './views/find';
-
-
 import GuestMypage from './views/mypageguest';
 import Accommodationenrollmentapproval from './views/admin/accommodationenrollmentapproval';
 import AccommodationList from './views/accommodation';
 import Roomly from './views/roomly';
 
-import ShowDetailList from './component/mypagehost/MyAccommodationManagement/showaccdetail/detaillist';
 import { SignInHost, SignInUser } from './stores';
 
 
@@ -40,11 +32,6 @@ import GetGuestSignInResponseDto from './apis/login/dto/response/get-guest-sign-
 import { ResponseDto } from './apis/guestmypage';
 
 import HostMypage from './views/mypagehost';
-import ReservationStatus from './component/mypagehost/ReservationStatus';
-import HostMypageLayout from './layout/mypageHost';
-import MyInfoManagement from './component/mypagehost/myinfo';
-import MyAccommodationManagementView from './views/mypagehost/MyAccommodationManagement';
-import HostList from './views/admin/hostenrollmentapproval/index';
 import HostAccommodationRegisterForm from './component/mypagehost/MyAccommodationManagement/registration/accommodationRegistrationform';
 
 
@@ -101,7 +88,10 @@ export default function App() {
           responseBody.code === 'AF' ? '잘못된 접근입니다.' :
             responseBody.code === 'DBE' ? '로그인 유저 정보를 불러오는데 문제가 발생했습니다.' : '';
     const isSuccessde = responseBody !== null && responseBody.code === 'SU';
-    if (!isSuccessde) return;
+    if (!isSuccessde) {
+      alert(message);
+      return;
+    }
     const { guestId, guestName, guestTelNumber } = responseBody as GetGuestSignInResponseDto
     setSignInUser({ guestId, guestName, guestTelNumber });
   }
@@ -114,7 +104,10 @@ export default function App() {
           responseBody.code === 'AF' ? '잘못된 접근입니다.' :
             responseBody.code === 'DBE' ? '로그인 유저 정보를 불러오는데 문제가 발생했습니다.' : '';
     const isSuccessde = responseBody !== null && responseBody.code === 'SU';
-    if (!isSuccessde) return;
+    if (!isSuccessde) {
+      alert(message);
+      return;
+    };
 
     const { hostId, hostName, hostTelNumber, hostPw, entryStatus } = responseBody as GetHostSignInResponseDto;
     setSignInHost({ hostId, hostName, hostPw, hostTelNumber, entryStatus });

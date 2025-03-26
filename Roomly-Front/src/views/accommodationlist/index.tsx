@@ -1,12 +1,9 @@
 import DetailList from "src/component/accomodation/detaillist";
 import "./style.css";
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import GetAccommodationResponseDto from "src/apis/hostmypage/dto/response/GetAccommodationResponseDto";
-import { GUEST_ACCESS_TOKEN } from "src/constants";
-import { HOST_ACCESS_TOKEN } from "src/constants";
 import { ResponseDto } from "src/apis/hostmypage";
 import { useCookies } from "react-cookie";
-import { getAccommodationDetailRequest } from "src/apis";
 import { GetAccommodationDetailListResponseDto } from "src/apis/hostmypage/dto/response/get-accommodation-detail-list.response.dto";
 
 

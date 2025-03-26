@@ -9,7 +9,6 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router";
 import { useCookies } from "react-cookie";
 import { GUEST_ACCESS_TOKEN } from "src/constants";
-import { HOST_ACCESS_TOKEN } from "src/constants";
 import { getAccommodationDetailRequest } from "src/apis";
 import { ResponseDto } from "src/apis/guestmypage";
 import GetAccommodationResponseDto from "src/apis/hostmypage/dto/response/GetAccommodationResponseDto";

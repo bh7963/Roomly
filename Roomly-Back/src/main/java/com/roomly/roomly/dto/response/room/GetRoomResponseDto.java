@@ -17,6 +17,7 @@ public class GetRoomResponseDto extends ResponseDto {
     private String roomName;
     private String roomCheckIn;
     private String roomCheckOut;
+    private String roomMainImage;
     private String roomInfo;
 
     public GetRoomResponseDto(RoomEntity roomEntity){
@@ -25,6 +26,7 @@ public class GetRoomResponseDto extends ResponseDto {
         this.roomName = roomEntity.getRoomName();
         this.roomCheckIn = roomEntity.getRoomCheckIn();
         this.roomCheckOut = roomEntity.getRoomCheckOut();
+        this.roomMainImage = roomEntity.getRoomMainImage();
         this.roomInfo = roomEntity.getRoomInfo();
     }
 

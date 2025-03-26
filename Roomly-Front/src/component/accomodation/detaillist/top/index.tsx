@@ -27,7 +27,7 @@ const AccommodationDetailTopImages = ({ accommodation }: Props) => {
     initialSlide: currentImage,
     dots: false,
     infinite: true,
-    speed: 500,
+    speed: 300,
     slidesToShow: 1,
     slidesToScroll: 1,
     afterChange: (index: number) => setCurrentImage(index),
@@ -64,7 +64,7 @@ const AccommodationDetailTopImages = ({ accommodation }: Props) => {
 
       {/* Small images in a 2x3 grid */}
       <div className="small-image-grid-container">
-          {accommodation.accommodationMainImage.length > 4 && (
+          {accommodation.accommodationMainImage.length > 2 && (
           <button className="button-box" onClick={() => setIsModalOpen(true)}>
             <div className="image-icon"></div>
             <div className="view-all-btn"> 전체보기 </div>
@@ -72,7 +72,7 @@ const AccommodationDetailTopImages = ({ accommodation }: Props) => {
         )}
 
         <div className="small-image-grid">
-          {accommodation.accSubImages.slice(1, 5).map((image, index) => (
+          {accommodation.accSubImages.slice(1, 3).map((image, index) => (
             // eslint-disable-next-line jsx-a11y/alt-text
             <img
               src={image}
@@ -80,7 +80,7 @@ const AccommodationDetailTopImages = ({ accommodation }: Props) => {
               alt="sub Accommodation"
               className="small-image"
               onClick={() => handleImageClick(index + 1)}
-            />
+              />
           ))}
         </div>
       </div>
@@ -96,11 +96,12 @@ const AccommodationDetailTopImages = ({ accommodation }: Props) => {
         <button className='room-detail-modal-close-btn' onClick={closeModal}></button>
         <Slider {...sliderSettings} ref={sliderRef}>
           {accommodation.accSubImages.map((images, index) => (
-            <div key={index}>
+            <div key={index} className="modelImage">
               <img
                 src={images}
                 alt={`Accommodation ${index + 1}`}
                 className="large-modal-image"
+                style={{ width: "500px", height: "500px", marginTop: "10px"  }}
               />
             </div>
           ))}

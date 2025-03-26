@@ -28,8 +28,8 @@
 
 #image-container .small-image-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(1fr, 1);
+  grid-template-rows: repeat(1fr, 1);
   flex-basis: 80%; /* Takes up 40% of the space */
 }
 
@@ -280,7 +280,7 @@ margin-left: 10px;
 #content {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 30px;
 }
 
 #content .review-section,
@@ -467,4 +467,11 @@ margin-left: 10px;
   font-weight: 600;
   text-decoration: underline;
   
+}
+
+#content .modelImage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%
 }

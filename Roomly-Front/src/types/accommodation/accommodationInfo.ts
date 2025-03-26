@@ -1,7 +1,6 @@
 export default interface AccommodationInfo{
     accommodationName: string; 
     accommodationMainImage: string; 
-    accommodationImages:string[];
     accommodationType: string; 
     accommodationIntroduce:string;
     accommodationAddress: string;
@@ -13,4 +12,5 @@ export default interface AccommodationInfo{
     categoryWifi: boolean;
     categoryCarPark: boolean;
     categoryPool: boolean;
+    hostId:string;
 }

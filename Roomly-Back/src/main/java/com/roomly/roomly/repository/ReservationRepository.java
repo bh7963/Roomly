@@ -26,7 +26,10 @@ public interface ReservationRepository extends JpaRepository<ReservationEntity, 
     " V.total_price, "+
     " G.guest_name,"+
     " G.guest_tel_number,"+
-    " R.room_name "+
+    " R.room_name,"+
+    " V.check_in_day,"+
+    " V.check_out_day,"+
+    " V.created_at "+
     " FROM reservation V LEFT JOIN room R "+
     " ON V.room_id = R.room_id "+
     " LEFT JOIN accommodation A "+
@@ -36,7 +39,7 @@ public interface ReservationRepository extends JpaRepository<ReservationEntity, 
     " WHERE A.host_id = :hostId ",
     nativeQuery = true
     )
-    List<GetReservationResultSet> getReservationList(@Param("hostId") String accommodationName);
+    List<GetReservationResultSet> getReservationList(@Param("hostId") String hostId);
 
     boolean existsByRoomId(Integer roomId);
 

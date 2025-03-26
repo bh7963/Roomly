@@ -194,3 +194,9 @@
         font-size: 14px;
     }
   }  */
+
+  #registration-wrapper .input-box {
+    width: 100%;
+    height: auto;
+    margin-bottom: -60px;
+  }

@@ -1,16 +1,20 @@
 import './style.css';
 
 import React, { ChangeEvent, useEffect, useState } from 'react'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Topbar from 'src/component/topbar';
 import ResponseDto from 'src/apis/signUp/dto/response/response.dto';
 import ModalComponent1 from 'src/component/payment/modal1';
 import ModalComponent2 from 'src/component/payment/modal2';
 import ModalComponent3 from 'src/component/payment/modal3';
 import ModalComponent4 from 'src/component/payment/modal4';
-import axios from 'axios';
 import dayjs from 'dayjs';
 import { SignInUser } from 'src/stores';
+import PostReservationRequestDto from 'src/apis/dto/request/reservation/post-reservation.request.dto';
+import { useCookies } from 'react-cookie';
+import { GUEST_ACCESS_TOKEN } from 'src/constants';
+import { postReservaitonRequest } from 'src/apis';
+import axios from 'axios';
 
 
 
@@ -28,11 +32,14 @@ interface PaymentComponentProps {
 // component: 결제 화면 컴포넌트 //
 export default function Payment({ onPathChange }: PaymentComponentProps) {
     const {signInUser} = SignInUser();
+    const userId = String(signInUser?.guestId); 
     
+    const [cookie]=useCookies();
+    const navigator = useNavigate();
     const location = useLocation();
 
     // state: 예약 상세 정보 불러오기 상태 //
-    const { imageSrc, price, checkInTime, checkOutTime, accommodationName, roomName, personnelCount } = location.state || {};
+    const { imageSrc, price, checkInTime, checkOutTime, accommodationName, roomName, personnelCount, roomId } = location.state || {};
 
     // state: 예약자 입력 정보 상태 //
     const [name, setName] = useState<string>('');
@@ -86,6 +93,7 @@ export default function Payment({ onPathChange }: PaymentComponentProps) {
 
     // variable: 결제 가능 여부 //
     const isComplete = name && telNumber && paymentType && isSend;
+    
 
     // 모든 버튼을 선택합니다.
     const paymentButtons = document.querySelectorAll('.payment-typeList div');
@@ -237,9 +245,23 @@ export default function Payment({ onPathChange }: PaymentComponentProps) {
         if(!signInUser) return;
         setGuestName(signInUser.guestName)
         setGuestTelNumber(signInUser.guestTelNumber)
+        console.log(roomId);
     },[signInUser])
 
-
+    // function: post Reservaiton Response 처리 함수 //
+    const postReservaitonResponse = (responseBody: ResponseDto | null) => {
+        const message = !responseBody ? '서버에 문제가 있습니다. ':
+        responseBody.code === 'DBE' ? '서버에문제가 있습니다': 
+        responseBody.code === 'NI' ? '잘못된 접근입니다. ':
+        responseBody.code === 'NR' ? '존재하지 않는 객실 입니다. ':
+        responseBody.code === 'DR' ? '중복된 예약입니다.' : 
+        responseBody.code === 'AF' ? '잘못된 접근입니다. ': ''
+        const isSuccessed = responseBody !== null && responseBody.code === 'SU';
+        if (!isSuccessed){
+            alert(message);
+            return;
+        }
+    }
     // event handler: 결제 요청 버튼 클릭 이벤트 처리 // 
     const onChargeClickButtonHandler = (
         pg_method: string,
@@ -269,24 +291,29 @@ export default function Payment({ onPathChange }: PaymentComponentProps) {
                 buyer_postcode: '김',
                 m_redirect_url: redirect_url || "http://localhost:3000/main" // 결제 완료 후 리다이렉션할 주소
             },
-            async function (rsp: { success: boolean; error_msg?: string, differenceinTime: number }) {
+            function (rsp: { success: boolean; error_msg?: string, differenceinTime: number }) {
 
                 if (rsp.success) {
                     alert("결제되었습니다.");
 
                     try {
-                        await axios.post('http://localhost:4000/api/roomly/payment/success', {
-                            totalPrice: calculatePricePerNight(),
-                            accommodationName: accommodationName,
-                            totalNight: differenceInTime(),
-                            checkInDay: checkInTime,
-                            checkOutDay: checkOutTime,
-                            reservationTotalPeople: personnelCount,
-                            createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-                            guestId: 'qwer1234',
-                            roomId: 1
-                        });
-
+                        // await axios.post('http://localhost:4000/api/roomly/payment/success', {
+                        //     totalPrice: calculatePricePerNight(),
+                        //     accommodationName: accommodationName,
+                        //     totalNight: differenceInTime(),
+                        //     checkInDay: checkInTime,
+                        //     checkOutDay: checkOutTime,
+                        //     reservationTotalPeople: personnelCount,
+                        //     createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+                        //     guestId: 'qwer1234',
+                        //     roomId: 1
+                        // });
+                        const accessToken = cookie[GUEST_ACCESS_TOKEN];
+                        const requestBody: PostReservationRequestDto = {
+                            totalPrice:calculatePricePerNight(), checkInDate:checkInTime, checkOutDate:checkOutTime, reservationTotalPeople:personnelCount, 
+                            createdAt:dayjs().format('YYYY-MM-DD HH:mm:ss'), totalNight:differenceInTime(), guestId:userId, roomId:137} 
+                        postReservaitonRequest(requestBody, accessToken).then(postReservaitonResponse);
+                        // navigator('/mypageGuest')
                     } catch (error) {
                         console.error("Failed to send payment data to server:", error);
                     }

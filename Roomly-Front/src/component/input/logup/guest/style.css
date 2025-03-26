@@ -44,7 +44,7 @@
 }
 
 .guest-input-container2 .message {
-    color: var(--error-color);
+    color: rgba(129,252,59);
     font-size: 11px;
     font-family: 'Pretendard-Regular';
     margin-top: 4px;

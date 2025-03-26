@@ -76,7 +76,7 @@ public class HostController {
         ResponseEntity<? super GetReservationResponseDto> responseBody = hostService.getRerservaitonList(hostId);
         return responseBody;
     }
-        // 호스트 정보 보내기
+    // 호스트 정보 보내기
     @GetMapping("/sign-in")
     public ResponseEntity<? super GetHostSignInResponseDto> getHostSignIn(
         @AuthenticationPrincipal String hostId

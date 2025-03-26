@@ -54,8 +54,7 @@ export default function HostMypage() {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    gap: 10px;
-  `;
+    gap: 10px;`;
 
 
     return (
@@ -70,7 +69,6 @@ export default function HostMypage() {
                     </div>
                     <div className='hostMypage-main'>
                         <MyInfoManagement activite={click === datail1 || click === ''} titletext={datail1} username={hostName} />
-                        <ReservationStatus activite={click === datail2 || click === ''} titletext={datail2} username={hostName} />
                         <ReservationStatus activite={click === datail2 || click === ''} titletext={datail2} username={hostName} />
                         <Add activite={click === datail3 || click === ''} titletext={datail3} username={hostName} />
                         {/* <AccommodationManagePage /> */}

@@ -7,7 +7,7 @@ import HostSignUpRequestDto from "./dto/request/host/h-sign-up.request.dto";
 import TelAuthRequestDto from "./dto/request/common/tel-auth.request.dto";
 import TelAuthCheckRequestDto from "./dto/request/common/tel-auth-check.request.dto";
 import BusinessNumberCheckRequestDto from "./dto/request/host/h-business-number-check.request.dto";
-import { GET_GUEST_SIGN_IN, GET_HOST_SIGN_IN, GUEST_ID_FIND_API_URL, GUEST_ID_FIND_TEL_AUTH_CHECK_API_URL, GUEST_SIGN_IN_API_URL, HOST_ID_CHECK, HOST_SIGN_UP_API_MODULE } from "src/constants";
+import { GET_GUEST_SIGN_IN, GET_HOST_SIGN_IN, GUEST_ID_FIND_API_URL, GUEST_ID_FIND_TEL_AUTH_CHECK_API_URL, GUEST_SIGN_IN_API_URL, HOST_ID_CHECK, HOST_SIGN_UP_API_MODULE, HOST_TEL_AUTH_API_URL, HOST_TEL_AUTH_CHECK_API_URL } from "src/constants";
 import GetSignInResponseDto from "../login/dto/response/get-guest-sign-in.response.dto";
 import GetGuestSignInResponseDto from "../login/dto/response/get-guest-sign-in.response.dto";
 import { GetHostSignInResponseDto } from "../login/dto";
@@ -68,7 +68,7 @@ export const hostIdCheckRequest = async (
     return responseBody;
 };
 
-// function : tel auth api 요청 함수 //
+// function : 게스트 tel auth  api 요청 함수 //
 export const telAuthRequest = async (requestBody: TelAuthRequestDto) => {
     const responseBody = await axios
         .post(TEL_AUTH_API_URL, requestBody)
@@ -76,6 +76,14 @@ export const telAuthRequest = async (requestBody: TelAuthRequestDto) => {
         .catch(responseErrorHandler);
     return responseBody;
 };
+
+// function: 호스트 tel auth api 요청 함수 //
+export const hostTelAuthRequest = async(requestBody:TelAuthCheckRequestDto) => {
+    const responseBody = await axios.post(HOST_TEL_AUTH_CHECK_API_URL, requestBody)
+        .then(responseDataHandler<ResponseDto>)
+        .catch(responseErrorHandler);
+    return responseBody;
+}
 
 // function: guestId 찾기 tel auth api 요청함수 //
 export const guestIdFind = async (requestBody: GuestIdFindRequestDto) => {

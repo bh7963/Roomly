@@ -13,6 +13,9 @@ public class Reservation{
     private String accommodationMainImage;
     private String guestName;
     private String guestTelNumber;
+    private String checkInDay;
+    private String checkOutDay;
+    private String createdAt;
 
     public Reservation(GetReservationResultSet resultSets){
         this.accommodationName = resultSets.getAccommodationName();
@@ -23,6 +26,9 @@ public class Reservation{
         this.accommodationMainImage = resultSets.getAccommodationMainImage();
         this.guestName = resultSets.getGuestName();
         this.guestTelNumber = resultSets.getGuestTelNumber();
+        this.checkInDay = resultSets.getCheckInDay();
+        this.checkOutDay = resultSets.getCheckOutDay();
+        this.createdAt = resultSets.getCreatedAt();
     }
 
 }

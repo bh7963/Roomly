@@ -13,7 +13,8 @@
 
 .checkIntime-Outime-box {
     display: flex;
-    gap: 150px;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .checkcheck1 {

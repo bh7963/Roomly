@@ -199,17 +199,20 @@ public class HostServiceImplement implements HostService {
     @Override
     public ResponseEntity<? super HostIdFindSuccessResponseDto> telAuthCheck(TelAuthCheckRequestDto dto) {
 
-        String telNumber = dto.getTelNumber();
-        String authNumber = dto.getAuthNumber();
-        String userId;
+        
+        String userId = null;
 
         try {
+            
+            String telNumber = dto.getTelNumber();
+            String authNumber = dto.getAuthNumber();
 
             TelAuthNumberEntity telAuthNumberEntity = telAuthNumberRepository.findByTelNumberAndAuthNumber(telNumber,authNumber);
             if (telAuthNumberEntity == null)
                 return ResponseDto.telAuthFail();
 
                 HostEntity hostEntity = hostRepository.findByHostTelNumber(telNumber);
+                if (hostEntity == null) return ResponseDto.noExistHost();
                 userId = hostEntity.getHostId();
             if (userId == null)
                 return ResponseDto.noExistUserId();

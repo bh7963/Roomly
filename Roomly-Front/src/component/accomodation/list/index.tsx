@@ -21,6 +21,7 @@ const List = () => {
   // variable: 승인된 숙소 갯수 //
   const trueApplyStatusCount =  callAccommodationList.filter(accommodation => accommodation.applyStatus).length;
 
+  // state: 필터 상태 //
   const {priceRange, setPriceRange} = useFilterStore();
   const {reviewScore, setReviewScore} = useFilterStore();
   const {accommodationType, setAccommodationType} = useFilterStore();
@@ -29,6 +30,7 @@ const List = () => {
 
   // state: url 값 저장 //
   const [searchParams] = useSearchParams("");
+
   // state: 북마크 상태 관리 //
   const [bookmarks, setBookmarks] = useState<string[]>([]);
 
@@ -36,7 +38,7 @@ const List = () => {
   const [cookies] = useCookies();
   
   // state: 이미지 상태 //
-  // const [accommodationMainImage, setAccommodationMainImage] = useState<string[]>([]);
+  const [accommodationMainImage, setAccommodationMainImage] = useState<string[]>([]);
 
   const handleBookmarkToggle = (accommodationName: string) => {
     if (bookmarks.includes(accommodationName)) {
@@ -69,9 +71,9 @@ const List = () => {
   useEffect(() => {
     const guestAccessToken = cookies[GUEST_ACCESS_TOKEN];
     
-
     if (!guestAccessToken) return;
-    getAccommodationListRequest(guestAccessToken).then(getAccommodaitonListResponse);
+    if (!urlRegion) return;
+    getAccommodationListRequest(urlRegion, guestAccessToken).then(getAccommodaitonListResponse);
 
   }, []);
 

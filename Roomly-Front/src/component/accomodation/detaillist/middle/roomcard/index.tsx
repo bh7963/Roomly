@@ -34,6 +34,7 @@ const RoomCard = ({ accommodation, room }: Props) => {
   const urlCount = searchParams.get('count')
   const urlName = searchParams.get('accommodationName')
   const urlRoom = searchParams.get('roomName')
+  const urlRoomId = searchParams.get('roomId')
   
 
   // function: 네비게이터 함수 //
@@ -71,7 +72,7 @@ const RoomCard = ({ accommodation, room }: Props) => {
       // 로그인 상태인 경우 예약 페이지로 이동
       navigator(
         `${PAYMENT_PATH}?Region=${urlRegion}&start=${urlStart}&end=${urlEnd}&count=${urlCount}&name=${accommodation.accommodationName}&roomType=${urlRoom}`,
-        { state: { imageSrc: accommodation.accommodationMainImage[0], price: room.roomPrice, checkInTime: urlStart, checkOutTime: urlEnd, personnelCount: urlCount, accommodationName:accommodation.accommodationName, roomName: room.roomName, roomType: urlRoom }
+        { state: { imageSrc: room.roomMainImage, price: room.roomPrice, checkInTime: urlStart, checkOutTime: urlEnd, personnelCount: urlCount, accommodationName:accommodation.accommodationName, roomName: room.roomName, roomType: urlRoom }
     });
     } else {
       // 로그인 상태가 아닌 경우 alert 표시 후 회원가입 페이지로 이동

@@ -18,6 +18,8 @@ import Rooms from "src/types/accommodation/rooms.interface";
 import Accommodation from './../../../../../types/accommodation/accommodation.interface';
 import AccommodationInfo from "src/types/accommodation/accommodationInfo";
 import RoomRegister from "../roomRegistrationform/indexfinal";
+import useHostStore from "src/stores/sign-in-host.store";
+import InputBox from "src/component/input/login";
 
 // PostAccommodationRequestDto
 
@@ -55,10 +57,12 @@ function HostAccommodationRegisterForm() {
   const [roomErrors, setRoomErrors] = useState<string>("");
   const [isAdmin, setIsAdmin] = useState<boolean>(false);
   const [cookies, setCookies] = useCookies();
+  const {signInHost} = useHostStore();
   // state: 숙소 정보 입력 상태 //
   const [accommodationName, setAccommodationName] = useState<string>("");
   const [accommodationMainImagePreview, setAccommodaitonMainImagePreview] = useState<string>("");
   const [accommodationMainImageFile, setAccommodaitonMainImageFile] = useState<File | null>(null);
+  const [useInfoTitle, setUseInfoTitle] = useState<string>('');
   const [accommodationType, setAccommodationType] = useState<string>("");
   const [accommodationIntroduce, setAccommodationIntroduce] = useState<string>("");
   const [accommodationImagesFile, setAccommodationImagesFile] = useState<File[]>([]);
@@ -74,7 +78,7 @@ function HostAccommodationRegisterForm() {
   const [roomTotalGuest, setroomToralGuest] = useState<number>(0)
 
 
-  const [useInformations, setUseInformations] = useState<UseInformations[]>([{accommodationName:accommodationName, title:"asdf", context:useAccommodationName}]);
+  const [useInformations, setUseInformations] = useState<UseInformations[]>([{accommodationName:accommodationName, title:useInfoTitle, context:useAccommodationName}]);
   const [categoryArea, setCategoryArea] = useState<string>("123");
   const [categoryPet, setCategoryPet] = useState<boolean>(false);
   const [categoryNonSmokingArea, setCategoryNonSmokingArea] = useState<boolean>(false);
@@ -105,7 +109,7 @@ function HostAccommodationRegisterForm() {
     event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { value } = event.target;
-     setAccommodationIntroduce(value);
+    setAccommodationIntroduce(value);
   };  
 
   const handleUseInformationsChange = (
@@ -116,14 +120,6 @@ function HostAccommodationRegisterForm() {
   };
 
 
-
-
-
-
-
-
-
-  
   const handleMainImageChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (!event.target.files || !event.target.files.length) return;
     const file = event.target.files[0];
@@ -166,13 +162,11 @@ function HostAccommodationRegisterForm() {
     }
   };
 
-  const handleSelectImage = (image: File) => {};
 
   const handleTypeChange = (type: string) => {
     setAccommodationType(type);
   };
 
-  const handleFacilityToggle = (facility: string) => {};
 
   const handleRoomChange = (index: number, updatedRoom: Rooms) => {
     const newRooms = rooms.map((room, i) => (i === index ? updatedRoom : room));
@@ -182,7 +176,7 @@ function HostAccommodationRegisterForm() {
   // 객실 추가
   const handleAddRoom = async (event:FormEvent<HTMLFormElement> | MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
-       if (!accommodationMainImageFile) return;
+      if (!accommodationMainImageFile) return;
     
     let mainUrl: string | null = null;
     if (accommodationMainImageFile) {
@@ -224,7 +218,6 @@ function HostAccommodationRegisterForm() {
 
 
     const room: Rooms = {
-   
       roomName ,
       roomPrice ,
       roomCheckIn,
@@ -266,6 +259,7 @@ function HostAccommodationRegisterForm() {
   // effect: 관리자인지 권한 확인 //
   useEffect(() => {
     checkAdmin(); // 컴포넌트가 렌더링될 때 관리자 권한을 확인
+    console.log(signInHost?.hostId);
   }, []);
 
   // function: 네비게이트 함수 처리 //
@@ -293,7 +287,7 @@ function HostAccommodationRegisterForm() {
       alert(message);
       return;
     }
-    alert('성공!')
+    alert('숙소등록에 성공하였습니다.')
 
   };
 
@@ -301,6 +295,8 @@ function HostAccommodationRegisterForm() {
   const handleSubmit = async (event: FormEvent<HTMLFormElement> | MouseEvent<HTMLButtonElement>) => {
     event.preventDefault();
     const hostAccessToken = cookies[HOST_ACCESS_TOKEN];
+    if (!signInHost?.hostId || !hostAccessToken)return;
+
     if (!accommodationMainImageFile) return;
 
     let mainUrl: string | null = null;
@@ -346,7 +342,6 @@ function HostAccommodationRegisterForm() {
       accommodationAddress,
       accommodationType,
       accommodationIntroduce,
-      accommodationImages: subUrl,
       categoryArea,
       categoryPet,
       categoryNonSmokingArea,
@@ -354,19 +349,18 @@ function HostAccommodationRegisterForm() {
       categoryDinnerParty,
       categoryWifi,
       categoryCarPark,
-      categoryPool
+      categoryPool,
+      hostId:signInHost.hostId
     }
 
       const requestBody: PostAccommodationRequestDto = {
 
         accommodation : accommodation,
-        hostId: 'zxcv1234',
-        useInformations: [{accommodationName:accommodationName, title:"asdf", context:useAccommodationName}],
+        accommodationImages:subUrl,
+        useInformations: [{accommodationName:accommodationName, title:useInfoTitle, context:useAccommodationName}],
         rooms 
       }
-  
       postAccommodationRequest(requestBody, hostAccessToken).then(postAccommodationResposne)
- 
     }
     
 
@@ -424,6 +418,7 @@ function HostAccommodationRegisterForm() {
         <div>
           <label>
             숙소 이용 정보:
+            <InputBox type="text" placeholder="숙소이용정보 제목을 입력해주세요" value={useInfoTitle} onChange={(event:ChangeEvent<HTMLInputElement>)=>setUseInfoTitle(event.target.value)} message="" messageError/>
             <textarea
               name="description"
               value={useAccommodationName}
@@ -438,26 +433,9 @@ function HostAccommodationRegisterForm() {
         </div>
 
         {/* 숙소 이용 정보 추가 */}
-          <button type="button" onClick={handleAddUseInfomation}>
-             숙소 이용 정보 추가
-          </button>
-
-          <div>
-            <label>
-              숙소 이용 정보:
-              <textarea
-                name="description"
-                value={useAccommodationName}
-               
-                required
-                maxLength={1500} // HTML 레벨에서도 제한
-              />
-            </label>
-            {descriptionError && (
-              <p style={{ color: "red" }}>{descriptionError}</p>)}
-          {roomErrors && <p style={{ color: "red" }}>{roomErrors}</p>}
-        </div>
-
+          {/* <button type="button" onClick={handleAddUseInfomation}>
+            숙소 이용 정보 추가
+          </button> */}
         {/* 위치 입력 필드 */}
         <div>
           <label>
@@ -474,7 +452,6 @@ function HostAccommodationRegisterForm() {
             </button>
           </label>
         </div>
-
         {/* 숙소 대표 이미지 업로드 */}
         <div>
           <label>
@@ -493,7 +470,6 @@ function HostAccommodationRegisterForm() {
             />
           )}
         </div>
-
         {/* 숙소 이미지 업로드 */}
         <div>
           <label>
@@ -660,9 +636,6 @@ function HostAccommodationRegisterForm() {
               onChange={(updatedRoom) => handleRoomChange(index, updatedRoom)}
               onDelete={() => handleDeleteRoom(index)}
               onCopy={() => handleCopyRoom(index)}
-
-
-              // 복사 기능 추가
             />
           ))}
           {roomErrors && <p style={{ color: "red" }}>{roomErrors}</p>}

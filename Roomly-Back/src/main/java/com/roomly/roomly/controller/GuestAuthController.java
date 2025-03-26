@@ -12,7 +12,6 @@ import com.roomly.roomly.dto.request.guest.GuestPwFindRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestIdCheckRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestSignInRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestSignUpRequestDto;
-import com.roomly.roomly.dto.request.guestauth.GuestTelAuthCheckRequestDto;
 import com.roomly.roomly.dto.request.guestauth.GuestTelAuthRequestDto;
 import com.roomly.roomly.dto.request.host.TelAuthCheckRequestDto;
 import com.roomly.roomly.dto.response.ResponseDto;

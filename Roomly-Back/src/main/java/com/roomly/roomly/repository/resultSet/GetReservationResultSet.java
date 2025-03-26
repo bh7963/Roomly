@@ -11,4 +11,7 @@ public interface GetReservationResultSet {
     String getRoomName();
     String getAccommodationMainImage();
     String getAccommodationName();
+    String getCheckInDay();
+    String getCheckOutDay();
+    String getCreatedAt();
 }

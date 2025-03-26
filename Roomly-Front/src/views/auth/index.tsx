@@ -8,7 +8,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import ResponseDto from 'src/apis/signUp/dto/response/response.dto';
 import GuestIdCheckRequestDto from 'src/apis/signUp/dto/request/guest/g-id-check.requst.dto';
 import HostIdCheckRequestDto from 'src/apis/signUp/dto/request/host/h-id-check.requst.dto';
-import { businessNumberCheckRequest, guestIdCheckRequest, guestSignUpRequest, hostIdCheckRequest, hostSignUpRequest, telAuthCheckRequest, telAuthRequest } from 'src/apis/signUp';
+import { businessNumberCheckRequest, guestIdCheckRequest, guestSignUpRequest, hostIdCheckRequest, hostSignUpRequest, hostTelAuthRequest, telAuthCheckRequest, telAuthRequest } from 'src/apis/signUp';
 import TelAuthRequestDto from 'src/apis/signUp/dto/request/common/tel-auth.request.dto';
 import TelAuthCheckRequestDto from 'src/apis/signUp/dto/request/common/tel-auth-check.request.dto';
 import GuestSignUpRequestDto from 'src/apis/signUp/dto/request/guest/g-sign-up.request.dto';
@@ -80,6 +80,7 @@ export default function SignUp() {
   const [businessName, setBusinessName] = useState<string>('');
   const [businessNumber, setBusinessNumber] = useState<string>('');
   const [businessStartDay, setBusinessStartDay] = useState<Date | null>(null);
+  const [businessType, setBusinessType] = useState<string>('');
   const [startStringDay, setStartStringDay] = useState<string>('');
 
   const [businessImage, setBusinessImage] = useState<string>('');
@@ -171,7 +172,7 @@ export default function SignUp() {
       hostPasswordCheck !== '' &&
       businessName !== '' &&
       businessNumber !== '' &&
-      businessImage !== '' &&
+      businessType !== '' &&
       formattedBusinessStartDay !== '' &&
       telNumber !== '' &&
       authNumber !== '' &&
@@ -379,10 +380,11 @@ export default function SignUp() {
     setBusinessNumber(value); // 상태 업데이트
   };
 
+  
   // event handler: 사업자 번호 변경 이벤트 처리 //
-  const onBusinessImageChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+  const onBusinessTypeChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
     const { value } = event.target; // 입력된 값을 가져옴
-    setBusinessImage(value); // 상태 업데이트
+    setBusinessType(value); // 상태 업데이트
   };
 
   // event handler: 사업자 번호 버튼 클릭 이벤트 처리 //
@@ -406,7 +408,8 @@ export default function SignUp() {
       const requestBody: BusinessNumberCheckRequestDto = {
         b_no: businessNumber,
         start_dt: startStringDay,
-        p_nm: businessName
+        p_nm: businessName,
+        b_sector: businessType
       };
       businessNumberCheckRequest(requestBody).then(businessNumberCheckResponse);
     }
@@ -457,7 +460,7 @@ export default function SignUp() {
     telAuthRequest(requestBody).then(telAuthResponse);
   };
 
-  // event handler: 인증 확인 버튼 클릭 이벤트 처리 //
+  // event handler: 게스트 인증 확인 버튼 클릭 이벤트 처리 //
   const onAuthNumberCheckClickHandler = () => {
     if (!authNumber) return;
 
@@ -466,6 +469,18 @@ export default function SignUp() {
       authNumber: authNumber
     }
     telAuthCheckRequest(requestBody).then(telAuthCheckResponse);
+
+  };
+
+  // event handler: 호스트 인증 확인 버튼 클릭 이벤트 처리 //
+  const onHostAuthNumberCheckClickHandler = () => {
+    if (!authNumber) return;
+
+    const requestBody: TelAuthCheckRequestDto = {
+      telNumber: telNumber,
+      authNumber: authNumber
+    }
+    hostTelAuthRequest(requestBody).then(telAuthCheckResponse);
 
   };
 
@@ -536,7 +551,7 @@ export default function SignUp() {
       hostBusinessNumber: businessNumber,
       businessName: businessName,
       businessStartDay: startStringDay,
-      businessImage: businessImage
+      businessType: businessType
     };
 
     hostSignUpRequest(requestBody).then(hostSignUpResponse);
@@ -669,7 +684,7 @@ export default function SignUp() {
                 placeholder="인증번호 4자리를 입력해주세요."
                 buttonName="인증확인"
                 onChange={onAuthNumberChangeHandler}
-                onButtonClick={onAuthNumberCheckClickHandler}
+                onButtonClick={currentView === 'guest' ? onAuthNumberCheckClickHandler: onHostAuthNumberCheckClickHandler}
               />
               {/* 사업자 등록 (호스트만) */}
               {currentView === 'host' && (
@@ -683,18 +698,8 @@ export default function SignUp() {
                     placeholder="사업자 등록이름을 입력해주세요."
                     onChange={onBusinessNameChangeHandler}
                   />
-                  <InputComponent
-                    messageError={businessNumberCheckMessageError}
-                    message={businessNumberCheckMessage}
-                    value={businessNumber}
-                    label="사업자 등록번호"
-                    type="text"
-                    placeholder="사업자 등록번호 10자를 입력해주세요."
-                    buttonName="등록"
-                    onChange={onBusinessNumberChangeHandler}
-                    onButtonClick={onBusinessNumberCheckClickHandler}
-                  />
-                  <InputComponent
+                  
+                  {/* <InputComponent
                     messageError={businessImageCheckMessageError}
                     message=''
                     value={businessImage}
@@ -702,6 +707,15 @@ export default function SignUp() {
                     type="file"
                     placeholder=""
                     onChange={onBusinessImageChangeHandler}
+                  /> */}
+                  <InputComponent
+                    messageError={businessNumberCheckMessageError}
+                    message={businessNumberCheckMessage}
+                    value={businessType}
+                    label="사업자 유형"
+                    type="text"
+                    placeholder="사업자 유형을 입력하세요."
+                    onChange={onBusinessTypeChangeHandler}
                   />
                   <div id="business-wrapper">
                     <div className="startDay-container">
@@ -722,6 +736,17 @@ export default function SignUp() {
                         <div className="error-message">{businessStartDayCheckMessage}</div>
                       )}
                     </div>
+                    <InputComponent
+                    messageError={businessNumberCheckMessageError}
+                    message={businessNumberCheckMessage}
+                    value={businessNumber}
+                    label="사업자 등록번호"
+                    type="text"
+                    placeholder="사업자 등록번호 10자를 입력해주세요."
+                    buttonName="등록"
+                    onChange={onBusinessNumberChangeHandler}
+                    onButtonClick={onBusinessNumberCheckClickHandler}
+                  />
                   </div>
                 </>
               )}

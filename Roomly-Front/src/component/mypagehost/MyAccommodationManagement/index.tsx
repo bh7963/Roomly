@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./style.css";
 import { useNavigate, useParams } from "react-router";
-import Topbar from "src/component/topbar";
-import HostMypageLayout from "src/layout/mypageHost";
+
 import PaginationFunction from "src/component/accomodation/pagination";
 
-import axios from "axios";
 import { getHostAccommodationListRequest } from "src/apis";
 import { HOST_ACCESS_TOKEN } from "src/constants";
 import { useCookies } from "react-cookie";
@@ -75,15 +73,6 @@ const AccommodationManagementPage: React.FC = () => {
       selectedTab === "운영중" ? accommodations.applyStatus : !accommodations.applyStatus
   );
 
-
-  // if (loading) {
-  //   return <div>로딩 중...</div>;
-  // }
-
-  // if (error) {
-  //   return <div>{error}</div>;
-  // }
-
   return (
     <div className="accommodation-management-page">
       <h2 className="page-title">내 숙소 정보 관리</h2>
@@ -101,12 +90,12 @@ const AccommodationManagementPage: React.FC = () => {
         >
           등록 승인 대기중
         </button>
-        <button
+        {/* <button
           className={`tab-button ${selectedTab === "삭제 승인 대기중" ? "active" : ""}`}
           onClick={() => setSelectedTab("삭제 승인 대기중")}
         >
           삭제 승인 대기중
-        </button>
+        </button> */}
         <button className="register-button" onClick={handleRegisterClick}>
           숙소 등록
         </button>

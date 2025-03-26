@@ -7,7 +7,7 @@ import UseInformations from "src/types/accommodation/use-informaion.interface";
 export interface PostAccommodationRequestDto{
 
     accommodation:AccommodationInfo;
+    accommodationImages:string[]
     useInformations:UseInformations[];
     rooms:Rooms[];
-    hostId: string;
 }

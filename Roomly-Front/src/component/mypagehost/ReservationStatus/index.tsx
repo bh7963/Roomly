@@ -1,7 +1,15 @@
 import React, { ChangeEvent, useEffect, useState } from 'react';
 import './style.css';
-import HostList from '../ReservationStatusList';
 import ReservationStatusList from '../ReservationStatusList';
+import GetReservationStatusListResponseDto from 'src/apis/hostmypage/dto/response/GetReservationStatusListResponseDto';
+import { ResponseDto } from 'src/apis/guestmypage';
+import { HOST_ACCESS_TOKEN } from 'src/constants';
+import { useCookies } from 'react-cookie';
+import ReservationList from 'src/types/accommodation/reservationstatus-list.interface';
+import { SignInHost } from 'src/stores';
+import useHostStore from 'src/stores/sign-in-host.store';
+import { getHostReservationStatusListRequest } from 'src/apis';
+import { useNavigate } from 'react-router';
 
 
 
@@ -12,42 +20,52 @@ interface Props {
 }
 
 export default function ReservationStatus({ titletext, username, activite }: Props) {
-    const [password, setPassword] = useState<string>('');
-    const [checkPassword, setCheckPassword] = useState<string>('');
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 3; // 한 페이지에 표시할 항목 수
-
-    // 비밀번호 변경 핸들러
-    const onPasswordChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        setPassword(event.target.value);
-    };
-
-    const onCheckPasswordChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-        setCheckPassword(event.target.value);
-    };
-
-    useEffect(() => {
-        if (password && checkPassword) {
-            const equal = password === checkPassword;
-            // 비밀번호 일치 여부를 확인하는 로직 추가 가능
-        }
-    }, [password, checkPassword]);
+    const [cookies] = useCookies();
+    const [reservationList, setReservationList ] = useState<ReservationList[]>([]);
+    const { signInHost } = useHostStore();
+    const navigator = useNavigate();
 
     // 페이지 변경 핸들러
     const handlePageChange = (page: number) => {
         setCurrentPage(page);
     };
 
-    const totalItems = 40;  // 총 아이템 수 (예시로 5개로 설정)
-    const totalPages = Math.ceil(totalItems / itemsPerPage); // 페이지 수 계산
+    const onClickListComponent = () => {
+        navigator('/main')
+    }
 
-    // 현재 페이지에 표시할 BookingList 컴포넌트 배열
-    const currentItems = Array(totalItems)
-        .fill(<ReservationStatusList />)
-        .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage);
+    // Function: Get Guest Reservation List Response 처리 함수
+    const getHostReservationListResponse = (responseBody: GetReservationStatusListResponseDto | ResponseDto | null ) => {
+        const message =
+            !responseBody ? '서버에 문제가 있습니다.' :
+            responseBody.code === 'AF' ? '잘못된 접근입니다.' :
+            responseBody.code === 'NI' ? '존재하지 않는 사용자입니다.' :
+            responseBody.code === 'DBE' ? '서버에 문제가 있습니다.' : '';
+        
+        const isSuccess = responseBody !== null && responseBody.code === 'SU';
+        if (!isSuccess) {
+            alert(message);
+            return;
+        }
+        const { reservationList } = responseBody as GetReservationStatusListResponseDto;
+        setReservationList(reservationList); // 상태로 저장
+        };
+        // function: 호스트(숙소) 예약 현황 리스트 처리 함수 //
+        const getReservationList = () => {
+            const hostAccessToken = cookies[HOST_ACCESS_TOKEN];
+            if (!hostAccessToken) return;
+            if (!signInHost?.hostId) return;
+    
+            const hostId = signInHost.hostId;
+            getHostReservationStatusListRequest(hostId, hostAccessToken).then(getHostReservationListResponse)
+        }
 
-    // 페이지 번호 배열 생성
-    const pageNumbers = [...Array(totalPages)].map((_, i) => i + 1);
+        useEffect(()=>{
+            getReservationList();
+            console.log('TEST:'+reservationList)
+        },[])
+
 
     return (
         <>
@@ -63,20 +81,49 @@ export default function ReservationStatus({ titletext, username, activite }: Pro
                         </div>
                     </div>
                     <div className="reservationstatus-main">
-                        {currentItems}
+                        {reservationList && reservationList.length > 0 ?(reservationList.map((reservation) => (
+                            <div id='reservationstatus2-warpper'>
+                                <div className='reservationstatus2-box'>
+                                    <div className='reservationstatus2-list-top-deatail'>
+                                        <div className='reservationstatus2-guestinfo-roomId'>예약번호 : {reservation.reservationId}</div>
+                                        <div className='reservationstatus2-date'>예약시간: {reservation.createdAt}</div>
+                                    </div>
+                                    <div className='reservationstatus2-list-main-detail'>
+                                        <img className='reservationstatus2-list-image' 
+                                            src={reservation.accommodationMainImage} 
+                                            onClick={onClickListComponent} />
+                                        <div className='reservationstatus2-hotel-detail'>
+                                            <div className='reservationstatus2-hotel-title'>{reservation.accommodationName}</div>
+                                            <div className='reservationstatus2-hotel-room'>{reservation.roomName}</div>
+                                        </div>
+                                        <div className='reservationstatus2-detail-list'>
+                                            <div className='reservationstatus2-stay'>{reservation.totalNight}박</div>
+                                            <div className='reservationstatus2-start-end-time'>
+                                                <div className='reservationstatus2-start'>입실시간: {reservation.checkInDay}</div>
+                                                <div className='reservationstatus2-end'>퇴실시간: {reservation.checkOutDay}</div>
+                                            </div>
+                                            <div className='reservationstatus2-count'>{reservation.reservationTotalPeople}명</div>
+                                        </div>
+                                        <div className='reservationstatus2-guestinfo'>
+                                            <div className='reservationstatus2-guestinfo-name'>이름 :{reservation.guestName}</div>
+                                            <div className='reservationstatus2-guestinfo-guestId'>전화번호 :{reservation.guestTelNumber}</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>))): '예약이 없습니다.'}
                     </div>
                     <div className="pagination">
                         {/* 이전 버튼 */}
-                        <button 
+                        {/* <button 
                             className="page-arrow" 
                             onClick={() => handlePageChange(currentPage - 1)} 
                             disabled={currentPage === 1}
                         >
                             &lt;
-                        </button>
+                        </button> */}
 
                         {/* 페이지 번호 */}
-                        {pageNumbers.slice(0, 5).map((pageNum) => (
+                        {/* {pageNumbers.slice(0, 5).map((pageNum) => (
                             <button
                                 key={pageNum}
                                 className={currentPage === pageNum ? 'active' : ''}
@@ -84,16 +131,16 @@ export default function ReservationStatus({ titletext, username, activite }: Pro
                             >
                                 {pageNum}
                             </button>
-                        ))}
+                        ))} */}
 
                         {/* 다음 버튼 */}
-                        <button 
+                        {/* <button 
                             className="page-arrow" 
                             onClick={() => handlePageChange(currentPage + 1)} 
                             disabled={currentPage === totalPages}
                         >
                             &gt;
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             )}
